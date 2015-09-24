@@ -1,0 +1,1 @@
+Simple session to keep track of our authentication token

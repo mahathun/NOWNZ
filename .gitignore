@@ -1,0 +1,23 @@
+# Created by .gitignore support plugin (hsz.mobi)
+*.sw*
+*~
+node_modules/
+vendor/
+build/
+dist/
+bin/
+.idea/
+*.iml
+npm-debug.log
+coverage
+phantomjsdriver.log
+screenshot/*.png
+
+app/vendor/
+
+certificates/prod/*
+
+test-output.xml
+
+.DS_Store
+src/.DS_Store

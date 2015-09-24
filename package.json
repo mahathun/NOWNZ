@@ -1,0 +1,19 @@
+{
+  "name": "eit-project-2015",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "./node_modules/.bin/bower install",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./node_modules/.bin/http-server ./app -p 8080"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "http-server": "^0.8.4"
+  },
+  "devDependencies": {
+    "bower": "^1.5.2"
+  }
+}

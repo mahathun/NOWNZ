@@ -1,0 +1,1 @@
+Simple user service to login, logout and keep track of our user

@@ -1,0 +1,1 @@
+This directory is where you would put all your non-specific code, for example directives and services
