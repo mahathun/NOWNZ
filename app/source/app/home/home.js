@@ -1,3 +1,5 @@
+
+
 (function( ) {
   var module;
 
@@ -24,14 +26,27 @@
     HomeConfig
   ]);
 
-  function HomeCtrl( $scope, User, Api ) {
+  function HomeCtrl( $scope,PageLinks, User, Api,  $location) {
+    $scope.pageLinks  = null;
+    //var test = PageLinks;
+    $scope.pageLinks = PageLinks.getLinks();
+
+
+    console.log(User);
+
 
     $scope.user = User;
     $scope.plan = { };
 
+
     $scope.logout = function( ) {
       User.logout( );
     };
+
+    $scope.contact = function(){
+      console.log('test')
+      $location.path( '/contact' );
+    }
 
     Api.getPlan( )
       .then( function ( plan ) {
@@ -42,9 +57,18 @@
 
   module.controller( 'HomeCtrl', [
     '$scope',
+    'PageLinks',
     'User',
     'Api',
+    '$location',
     HomeCtrl
   ])
 
 }( ));
+
+
+$("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("active");
+        $("#carrot").removeClass("glyphicon-chevron-left");
+});

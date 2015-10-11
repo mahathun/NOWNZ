@@ -1,0 +1,83 @@
+.navbar {
+
+	margin-bottom: 0;
+	z-index:1000;
+	border-radius: 0;
+	
+}
+.footer{
+
+
+	-webkit-box-shadow: 1px 5px 15px 6px rgba(0,0,0,0.75);
+	-moz-box-shadow: 1px 5px 15px 6px rgba(0,0,0,0.75);
+	box-shadow: 1px 5px 15px 6px rgba(0,0,0,0.75);
+	/*Copy Text*/
+	/*border-top-width: 20px;*/
+	/*box-shadow: 10px 10px 5px #888888;*/
+	/*border-color: #004444;*/
+	background-color: #DAF5BF;
+	/*background-color: #555555;*/
+	background-image: url(../image/dot.png);
+	/*background-repeat: repeat;*/
+	color: #006600;
+}
+
+.facebook-icon{
+	-webkit-background-size: cover;
+	background-size: cover;
+	display: inline-block;
+	height: 30px;
+	width:30px;
+	background-image: url("../image/fb1.png");
+}
+.facebook-icon:hover{
+
+	background-image: url("../image/fb2.png");
+
+}
+
+.twitter-icon{
+	 -webkit-background-size: cover;
+	 background-size: cover;
+	 display: inline-block;
+	 height: 30px;
+	 width:30px;
+	 background-image: url("../image/twitter1.png");
+ }
+.twitter-icon:hover{
+
+	background-image: url("../image/twitter2.png");
+
+}
+
+.tel-icon {
+	color: #006600;
+
+	
+}
+
+
+.tel-icon :hover{
+	color: #ecd533!important;
+
+}
+.tel-icon span{
+	-webkit-background-size: cover;
+	background-size: cover;
+	display: inline-block;
+	height: 20px;
+	width:20px;
+	background-image: url("../image/tp1.png");
+	vertical-align: middle;
+	margin-right: 5px;
+}
+.tel-icon:hover span{
+
+	background-image: url("../image/tp2.png");
+
+}
+
+.background{
+
+	background-color: #DAF5BF;
+}

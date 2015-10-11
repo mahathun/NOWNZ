@@ -15,17 +15,20 @@
     <link rel="stylesheet" type="text/css" href="vendor/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="vendor/bootstrap/dist/css/bootstrap-theme.min.css"/>
     <link rel="stylesheet" type="text/css" href="vendor/jasny-bootstrap/dist/css/jasny-bootstrap.min.css"/>
+    
 
     <!-- User CSS Files -->
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="source/app/home/home.css"/>
 
 </head>
-<body>
+<body class="background">
 
     <!-- Header start -->
 
     <!-- See http://getbootstrap.com/components/#navbar, you will need to make this look how you like -->
 
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-inverse" >
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -35,43 +38,27 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Brand</a>
+                <a class="navbar-brand" href="#">
+                    <img width="130"style="position:absolute;" src="image/logo_img.png">
+                </a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">Link</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">One more separated link</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <form class="navbar-form navbar-left" role="search">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                    </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
-                </form>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="padding-left:150px">
+
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Link</a></li>
+                   <!--  <li><a href="#">Link</a></li> -->
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="glyphicon glyphicon-user"></i>
+                            &nbsp;User Name <span class="caret"></span>
+                        </a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
+                            <li><a href="#">My Profile</a></li>
+                            <li><a href="#">Edit Profile</a></li>
+                           <!--  <li><a href="#">Something else here</a></li> -->
                             <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
+                            <li><a href="#">Log out</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -83,12 +70,19 @@
 
     <!-- This is where our main views will be displayed -->
     <!-- See http://getbootstrap.com/css/#overview-container -->
-    <div class="container">
+   <!--  <div class="container">
         <div class="row">
+
+            
+            <div class="col-md-12"> -->
             <!-- uiView="main" correlates to $stateProvider views -->
-            <div ui-view="main"></div>
+                <!-- <div ui-view="main"></div>
+            </div>
         </div>
-    </div>
+    </div> -->
+
+<div class="background" ui-view="main"></div>
+
 
 
     <!-- Footer start -->
@@ -96,10 +90,33 @@
     <!-- If you wish to have a footer -->
     <!-- See http://getbootstrap.com/components/#navbar-fixed-bottom -->
 
-    <nav class="navbar navbar-default navbar-fixed-bottom">
-        <div class="container">
-            Footer content
+    <nav class=" navbar footer navbar-fixed-bottom" >
+        <div class="col-sm-12" style="padding:10px;">
+            <div class="col-md-4 col-sm-4 col-xs-12" style="">
+
+                <!--<img src="image/fb1.png">-->
+                <a class="tel-icon" style="padding-top: 0px;text-decoration: none;display: block;" href="tel:0800 438 669">
+                    <span></span>(0800 438 669)
+                </a>
+                <a class="tel-icon" style="text-decoration: none" href="mailto:help@nowcnz.co.nz">
+                    <span></span> help@nownz.co.nz
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12" style="">
+                <!--<center>-->
+
+                <!--</center>-->
+                <!--<img src="image/fb1.png">-->
+            </div>
+
+            <div class="col-md-4 col-sm-4 col-xs-12" align="right">
+                <a href="#"><span class="facebook-icon"></span></a>
+                <a href="#"><span class="twitter-icon"></span></a>
+            </div>
         </div>
+
+        <!-- social media -->
+
     </nav>
 
     <!-- Footer end -->
@@ -129,13 +146,17 @@
     <script type="application/javascript" src="source/common/factories/session/session.js"></script>
     <script type="application/javascript" src="source/common/factories/api/api.js"></script>
     <script type="application/javascript" src="source/common/factories/user/user.js"></script>
+    <script type="application/javascript" src="source/common/factories/pageLinks/pageLinks.js"></script>
 
     <!-- Controllers -->
 
+    <!--<script type="application/javascript" src="source/common/factories/pageLinks/pageLinksJSON.json"></script>-->
     <script type="application/javascript" src="source/app/home/home.js"></script>
+    <!--<script type="application/javascript" src="source/app/contact/contact.js"></script>-->
     <script type="application/javascript" src="source/app/login/login.js"></script>
 
 
-
+<!-- Menu Toggle Script -->
+   
 </body>
 </html>
