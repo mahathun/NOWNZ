@@ -1,0 +1,89 @@
+<div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+
+           <div class="sidebar-toggle-div pull-right" style="height:100%;z-index:1000; position:relative">
+                 <a href="#" class="pull-right sidebar-toggle" style="" id="menu-toggle" onclick="$('#wrapper').toggleClass('toggled');">
+
+                 <i id="carrot" class="glyphicon glyphicon-chevron-left pull-right" style="margin-top:50%"></i>
+                 </a>
+           </div>
+
+
+         <div> 
+            <ul class="sidebar-nav">
+
+                <li ng-repeat="link in pageLinks">
+                    <a href="{{link.url}}">{{link.page}}</a>
+                </li>
+
+
+            </ul>
+        </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        
+
+
+                        <div class="col-md-12">
+                            <div class="heading insetshadow" style="text-align: center">
+                                <h1>Your Usage</h1>
+                                <hr class="fancy-line">
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12 well" style="text-align: center">
+                                    This shows how much of internet and calls you have used for the month.
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <!-- calling circle -->
+                                    <div class="col-sm-4" align="middle">
+
+                                        <div id="circle1"></div>
+                                        <div id="circle1-days"></div>
+
+                                    </div>
+
+                                    <!-- data circle -->
+                                    <div class="col-sm-4" align="middle">
+                                        <div id="circle2"></div>
+                                    </div>
+
+                                    <!-- msgs circle -->
+                                    <div class="col-sm-4" align="middle">
+                                        <div id="circle3"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="remainingDays">
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+
+

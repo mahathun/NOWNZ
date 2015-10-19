@@ -12,7 +12,7 @@
 
     PageLinks.prototype.getLinks = function (  ) {
     var data = [
-        {"page": "page 1", "url": "/page 1"},
+        {"page": "Usage", "url": "#/usage"},
         {"page": "page 2", "url": "/page 2"},
         {"page": "page 3", "url": "/page 3"}
 

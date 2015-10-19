@@ -43,6 +43,56 @@
     )
   };
 
+  //------------------- Usage Starts -------------------------
+
+  // call usage
+  Api.prototype.getCallingUsage = function ( callback ) {
+
+    // Callback is optional
+    callback = callback || null;
+
+    return this.call(
+        'usage',
+        'getCallingUsage',
+        { },
+        callback,
+        true
+    )
+  };
+
+  // data usage
+  Api.prototype.getDataUsage = function ( callback ) {
+
+    // Callback is optional
+    callback = callback || null;
+
+    return this.call(
+        'usage',
+        'getInternetUsage',
+        { },
+        callback,
+        true
+    )
+  };
+
+  // wifi usage
+  Api.prototype.getPublicDataUsage = function ( callback ) {
+
+    // Callback is optional
+    callback = callback || null;
+
+    return this.call(
+        'usage',
+        'getPublicWiFiUsage',
+        { },
+        callback,
+        true
+    )
+  };
+  //------------------- Usage Ends -------------------------
+
+
+
   Api.prototype.call = function ( tag, operationId, options, callback, authenticated ) {
     var deferred;
 

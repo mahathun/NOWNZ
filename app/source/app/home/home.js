@@ -19,6 +19,8 @@
         pageTitle: 'Home'
       }
     })
+
+   // $scope.currentPage = $stateProvider.data.pageTitle;
   }
 
   module.config( [
@@ -31,6 +33,7 @@
     //var test = PageLinks;
     $scope.pageLinks = PageLinks.getLinks();
 
+    console.log($scope.currentPage);
 
     console.log(User);
 

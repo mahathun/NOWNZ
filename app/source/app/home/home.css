@@ -37,6 +37,8 @@
     width: 100%;
     position: absolute;
     padding: 15px;
+    margin-bottom: 90px;
+    margin-top: 50px;
 }
 
 #wrapper.toggled #page-content-wrapper {
@@ -59,6 +61,12 @@
 .sidebar-nav li {
     text-indent: 20px;
     line-height: 40px;
+}
+
+
+
+.sidebar-nav li .active{
+    background-color: #6E9E40;
 }
 
 .sidebar-nav li a {
@@ -140,7 +148,8 @@
 
     height:calc(100%);
     width:20px;
-    background-color: #6E9E40
+    background-color: #6E9E40;
+    padding-top: 50px;
 }
 
 .sidebar-toggle:hover{
@@ -149,3 +158,48 @@
     background-color: #638E39
 }
 
+.heading{
+    text-align: center;
+}
+
+.insetshadow{
+    color: rgb(133, 136, 130);
+    /*background-color: #2d2d2d;*/
+    letter-spacing: .1em;
+    /*text-shadow: -1px -1px 1px #77A54B, 2px 2px 1px #363636;*/
+
+}
+
+
+hr.fancy-line {
+    border: 0;
+    height: 1px;
+    position: relative;
+    margin: 0.5em 0; /* Keep other elements away from pseudo elements*/
+
+    margin-bottom: 1em;
+}
+hr.fancy-line:before {
+    top: -0.5em;
+    height: 1em;
+}
+hr.fancy-line:after {
+    content:'';
+    height: 0.5em;   /* half the height of :before */
+    top: 1px;        /* height of hr*/
+}
+
+hr.fancy-line:before, hr.fancy-line:after {
+    content: '';
+    position: absolute;
+    /*width: 100%;*/
+}
+
+hr.fancy-line, hr.fancy-line:before {
+    /*background: -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 75%);*/
+    /*background: -webkit-gradient(radial, center center, 0px, center center, 75%, color-stop(0%,rgba(0,0,0,0.1)), color-stop(75%,rgba(0,0,0,0)));*/
+    /*background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 75%);*/
+    /*background: -o-radial-gradient(center, ellipse cover, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 75%);*/
+    /*background: -ms-radial-gradient(center, ellipse cover, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 75%);*/
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 75%);
+}
