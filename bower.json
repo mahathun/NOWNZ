@@ -27,6 +27,7 @@
     "lodash": "~3.10.1",
     "moment": "~2.10.6",
     "swagger-client-generator": "~0.2.13",
-    "swagger-js": "~2.1.5"
+    "swagger-js": "~2.1.5",
+    "jquery-circle-progress": "~1.1.3"
   }
 }
