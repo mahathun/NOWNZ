@@ -13,8 +13,8 @@
     PageLinks.prototype.getLinks = function (  ) {
     var data = [
         {"page": "Usage", "url": "#/usage"},
-        {"page": "page 2", "url": "/page 2"},
-        {"page": "page 3", "url": "/page 3"}
+        {"page": "Payments", "url": "#/billing"},
+        {"page": "Plan", "url": "#/plan"}
 
     ];
         //return this.$http.get('/source/common/factories/pageLinks/JsonCData.json')

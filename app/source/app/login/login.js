@@ -28,15 +28,41 @@
 
     $scope.username = '';
     $scope.password = '';
+    $scope.callb=null;
+    $scope.loginError = null;
+
 
     $scope.submit = function ( ) {
 
-      User.login( $scope.username, $scope.password )
-        .then( function( ) {
-          $location.path( '/' );
-        });
+      if($scope.username != "" && $scope.password != "") {
+        $scope.emptyUsername = ($scope.username == "")? 'true': null;
+        $scope.emptyPassword = ($scope.password == "")? 'true': null;
+        User.login($scope.username, $scope.password)
+            .then(function () {
+              $location.path('/usage');
+              console.log(test);
+              $scope.loginError = null;
+              $(".footer").show();
+            }, function errorCallback(response) {
+              $scope.username = "";
+              $scope.password = "";
+
+              $scope.loginError = response;
+              // called asynchronously if an error occurs
+              // or server returns response with an error status.
+            });
+      }else{
+
+        $scope.emptyUsername = ($scope.username == "")? 'true': null;
+        $scope.emptyPassword = ($scope.password == "")? 'true': null;
+      }
     };
 
+
+  }
+
+  function test(){
+    alert("tes");
   }
 
   module.controller( 'LoginCtrl', [
@@ -46,4 +72,12 @@
     LoginCtrl
   ])
 
+  var height = $(window).height()-50;
+
+  $(".background").height(height);
+  $(".footer").hide();
+
+
+
 }( ));
+

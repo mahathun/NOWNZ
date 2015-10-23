@@ -43,6 +43,8 @@
 
 
     $scope.logout = function( ) {
+      $location.path('/login');
+
       User.logout( );
     };
 

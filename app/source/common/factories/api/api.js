@@ -29,19 +29,7 @@
 
   };
 
-  Api.prototype.getPlan = function ( callback ) {
 
-    // Callback is optional
-    callback = callback || null;
-
-    return this.call(
-      'plan',
-      'getPlan',
-      { },
-      callback,
-      true
-    )
-  };
 
   //------------------- Usage Starts -------------------------
 
@@ -90,6 +78,53 @@
     )
   };
   //------------------- Usage Ends -------------------------
+
+    //------------------- Plan Start-------------------------
+    //network status
+    Api.prototype.getNetworkStatus = function ( callback ) {
+
+        // Callback is optional
+        callback = callback || null;
+
+        return this.call(
+            'network',
+            'getNetworkStatus',
+            { },
+            callback,
+            true
+        )
+    };
+
+    // get plan
+    Api.prototype.getPlan = function ( callback ) {
+
+        // Callback is optional
+        callback = callback || null;
+
+        return this.call(
+            'plan',
+            'getPlan',
+            { },
+            callback,
+            true
+        )
+    };
+
+    Api.prototype.updatePlan = function ( obj,callback ) {
+
+        // Callback is optional
+        callback = callback || null;
+
+        return this.call(
+            'plan',
+            'updatePlan',
+            {plan:obj},
+            callback,
+            true
+        )
+    };
+    //------------------- Plan Ends-------------------------
+
 
 
 

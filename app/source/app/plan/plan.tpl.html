@@ -1,0 +1,249 @@
+<div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+
+           <div class="sidebar-toggle-div pull-right" style="height:100%;z-index:1000; position:relative">
+                 <a href="#" class="pull-right sidebar-toggle" style="" id="menu-toggle" onclick="$('#wrapper').toggleClass('toggled');">
+
+                 <i id="carrot" class="glyphicon glyphicon-chevron-left pull-right" style="margin-top:50%"></i>
+                 </a>
+           </div>
+
+
+         <div> 
+            <ul class="sidebar-nav">
+
+                <li ng-repeat="link in pageLinks">
+                    <a href="{{link.url}}">{{link.page}}</a>
+                </li>
+
+
+            </ul>
+        </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="">
+                        
+
+
+                        <div class="col-md-12">
+                            <div class="heading insetshadow" style="text-align: center">
+                                <h1>Your Plan</h1>
+                                <hr class="fancy-line">
+                            </div>
+
+
+                            <div class="col-sm-6 white-box">
+                                <h4>Plan Type</h4>
+                                <h5>{{plan.planType}}</h5>
+                            </div>
+
+                            <div class="col-sm-6 green-box">
+                                <h4>Data Limit</h4>
+                                <h5>{{plan.internet.limit}}</h5>
+                            </div>
+
+                            <div class="col-sm-6 col-xs-12 white-box pull-right">
+                                <h4>Network Status</h4>
+                                <h5><i ng-if="networkStatus.up" class="glyphicon glyphicon-thumbs-up" style="color: green;"> Up</i>
+                                    <i ng-if="!networkStatus.up" class="glyphicon glyphicon-thumbs-down" style="color: red;"> Down</i> </h5>
+                            </div>
+
+                            <div class="col-sm-6 col-xs-12  green-box pull-left">
+                                <h4>Connection Type</h4>
+                                <h5>{{plan.internet.connection}}</h5>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <!--------------------- change plan -------------->
+
+                <div class="heading insetshadow" style="text-align: center">
+                    <h1>Want to change Plan</h1>
+                    <hr class="fancy-line">
+                </div>
+                <!--<div class="row">-->
+                    <!--<div class="col-md-12">-->
+                        <!--<div class="row">-->
+                            <!--<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">-->
+
+                                <!--&lt;!&ndash; PRICE ITEM &ndash;&gt;-->
+                                <!--<div class="panel price panel-red">-->
+                                    <!--<div class="panel-heading  text-center">-->
+                                        <!--<h5>PRO PLAN</h5>-->
+                                    <!--</div>-->
+                                    <!--<div class="panel-body text-center">-->
+                                        <!--<p class="lead" style="font-size:20px"><strong>$10 / month</strong></p>-->
+                                    <!--</div>-->
+                                    <!--<ul class="list-group list-group-flush text-center">-->
+                                        <!--<li class="list-group-item"><i class="icon-ok text-danger"></i> Personal use</li>-->
+                                        <!--<li class="list-group-item"><i class="icon-ok text-danger"></i> Unlimited projects</li>-->
+                                        <!--<li class="list-group-item"><i class="icon-ok text-danger"></i> 27/7 support</li>-->
+                                    <!--</ul>-->
+                                    <!--<div class="panel-footer">-->
+                                        <!--<a class="btn btn-lg btn-block btn-danger" href="#">BUY NOW!</a>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--&lt;!&ndash; /PRICE ITEM &ndash;&gt;-->
+
+
+                            <!--</div>-->
+
+                            <!--<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">-->
+
+                                <!--&lt;!&ndash; PRICE ITEM &ndash;&gt;-->
+                                <!--<div class="panel price panel-blue">-->
+                                    <!--<div class="panel-heading arrow_box text-center">-->
+                                        <!--<h3>DEV PLAN</h3>-->
+                                    <!--</div>-->
+                                    <!--<div class="panel-body text-center">-->
+                                        <!--<p class="lead" style="font-size:40px"><strong>$20 / month</strong></p>-->
+                                    <!--</div>-->
+                                    <!--<ul class="list-group list-group-flush text-center">-->
+                                        <!--<li class="list-group-item"><i class="icon-ok text-info"></i> Personal use</li>-->
+                                        <!--<li class="list-group-item"><i class="icon-ok text-info"></i> Unlimited projects</li>-->
+                                        <!--<li class="list-group-item"><i class="icon-ok text-info"></i> 27/7 support</li>-->
+                                    <!--</ul>-->
+                                    <!--<div class="panel-footer">-->
+                                        <!--<a class="btn btn-lg btn-block btn-info" href="#">BUY NOW!</a>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--&lt;!&ndash; /PRICE ITEM &ndash;&gt;-->
+
+
+                            <!--</div>-->
+
+                            <!--&lt;!&ndash;<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">&ndash;&gt;-->
+
+                                <!--&lt;!&ndash;&lt;!&ndash; PRICE ITEM &ndash;&gt;&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div class="panel price panel-green">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<div class="panel-heading arrow_box text-center">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<h3>FREE PLAN</h3>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<div class="panel-body text-center">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<p class="lead" style="font-size:40px"><strong>$0 / month</strong></p>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<ul class="list-group list-group-flush text-center">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<li class="list-group-item"><i class="icon-ok text-success"></i> Personal use</li>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<li class="list-group-item"><i class="icon-ok text-success"></i> Unlimited projects</li>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<li class="list-group-item"><i class="icon-ok text-success"></i> 27/7 support</li>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<div class="panel-footer">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<a class="btn btn-lg btn-block btn-success" href="#">BUY NOW!</a>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;&lt;!&ndash; /PRICE ITEM &ndash;&gt;&ndash;&gt;-->
+
+
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+                            <!--<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">-->
+
+                                <!--&lt;!&ndash; PRICE ITEM &ndash;&gt;-->
+                                <!--<div class="panel price panel-grey">-->
+                                    <!--<div class="panel-heading arrow_box text-center">-->
+                                        <!--<h3>FREE PLAN</h3>-->
+                                    <!--</div>-->
+                                    <!--<div class="panel-body text-center">-->
+                                        <!--<p class="lead" style="font-size:40px"><strong>$0 / month</strong></p>-->
+                                    <!--</div>-->
+                                    <!--<ul class="list-group list-group-flush text-center">-->
+                                        <!--<li class="list-group-item"><i class="icon-ok text-success"></i> Personal use</li>-->
+                                        <!--<li class="list-group-item"><i class="icon-ok text-success"></i> Unlimited projects</li>-->
+                                        <!--<li class="list-group-item"><i class="icon-ok text-success"></i> 27/7 support</li>-->
+                                    <!--</ul>-->
+                                    <!--<div class="panel-footer">-->
+                                        <!--<a class="btn btn-lg btn-block btn-primary" href="#">BUY NOW!</a>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--&lt;!&ndash; /PRICE ITEM &ndash;&gt;-->
+
+
+                            <!--</div>-->
+
+
+
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+
+
+
+
+
+
+
+
+
+
+                <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+                <div class="">
+
+                    <div class="row content">
+                        <div class="col-lg-10 col-lg-offset-1">
+                            <div class="col-sm-4 text-center">
+                                <div class="plan">
+                                    <!--<p class="icon bronze">-->
+                                        <!--<i class="fa fa-tablet fa-fw"></i>-->
+                                    <!--</p>-->
+                                    <h3 class="bronze-text">Naked Broadband</h3>
+                                    <p class="bronze-text price">$70</p>
+                                    <p>100 GB</p>
+                                    <p>Rollover Data</p>
+                                    <p>ADSL</p>
+                                    <a class="btn btn-pricing" ng-click="changePlan('plan1')">Order Now</a>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4 text-center">
+                                <div class="plan">
+                                    <!--<p class="icon silver">-->
+                                        <!--<i class="fa fa-laptop fa-fw"></i>-->
+                                    <!--</p>-->
+                                    <h3>Phone & Broadband</h3>
+                                    <p class="price">$75</p>
+                                    <p>50 GB</p>
+                                    <p>Free Local calling</p>
+                                    <p>VDSL</p>
+                                    <a class="btn btn-pricing" ng-click="changePlan('plan2')">Order Now</a>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4 text-center">
+                                <div id="p1" class="plan">
+                                    <!--<p class="icon gold">-->
+                                        <!--<i class="fa fa-desktop fa-fw"></i>-->
+                                    <!--</p>-->
+                                    <h3 class="gold-text">Phone & Broadband</h3>
+                                    <p class="gold-text price">$99</p>
+                                    <p>Unlimited Data</p>
+                                    <p>Hotspot data</p>
+                                    <p>FIBRE</p>
+
+                                    <a class="btn btn-pricing" ng-click="changePlan('plan3')">Order Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+
+

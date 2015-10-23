@@ -21,6 +21,8 @@
     <link rel="stylesheet" type="text/css" href="css/index.css"/>
     <link rel="stylesheet" type="text/css" href="source/app/home/home.css"/>
     <link rel="stylesheet" type="text/css" href="source/app/usage/usage.css"/>
+    <link rel="stylesheet" type="text/css" href="source/app/login/login.css"/>
+    <link rel="stylesheet" type="text/css" href="source/app/plan/plan.css"/>
 
 </head>
 <body class="background">
@@ -52,7 +54,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                             <i class="glyphicon glyphicon-user"></i>
-                            &nbsp;User Name <span class="caret"></span>
+                            &nbsp;{{user.session.user.username}} <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
                             <li><a href="#">My Profile</a></li>
@@ -159,8 +161,10 @@
     <!--<script type="application/javascript" src="source/common/factories/pageLinks/pageLinksJSON.json"></script>-->
     <script type="application/javascript" src="source/app/home/home.js"></script>
     <script type="application/javascript" src="source/app/usage/usage.js"></script>
+    <script type="application/javascript" src="source/app/billing/billing.js"></script>
     <!--<script type="application/javascript" src="source/app/contact/contact.js"></script>-->
     <script type="application/javascript" src="source/app/login/login.js"></script>
+    <script type="application/javascript" src="source/app/plan/plan.js"></script>
 
 
 <!-- Menu Toggle Script -->
