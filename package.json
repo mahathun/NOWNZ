@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "postinstall": "cd node_modules/.bin/bower install",
+    "postinstall": "./node_modules/.bin/bower install",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "./node_modules/.bin/http-server ./app -p 8080"
   },
@@ -13,9 +13,6 @@
   "dependencies": {
     "bower": "^1.6.3",
     "http-server": "0.8.4"
-  },
-  "engines": {
-    "node": "4.1.1"
   },
   "devDependencies": {
     "bower": "^1.6.3"
