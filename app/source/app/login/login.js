@@ -75,7 +75,7 @@
   var height = $(window).height()-50;
 
   $(".background").height(height);
-  $(".footer").hide();
+  //$(".footer").hide();
 
 
 
