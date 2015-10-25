@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "bower": "^1.6.3",
+    "express": "^4.13.3",
     "http-server": "0.8.4"
   },
   "devDependencies": {
