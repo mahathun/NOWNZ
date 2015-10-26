@@ -1,173 +1,350 @@
+
+
 <!DOCTYPE html>
+
 <!-- Define your ngApp and ngController -->
+
 <html lang="en" ng-app="ngNow.portal" ng-controller="AppCtrl">
+
 <head>
+
     <meta charset="UTF-8">
+
     <title></title>
 
+​
+
     <!-- Mobile -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+​
+
     <!-- If you wish to disable zooming -->
+
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
 
+​
+
     <!-- Vendore CSS Files -->
+
     <link rel="stylesheet" type="text/css" href="vendor/bootstrap/dist/css/bootstrap.min.css"/>
+
     <link rel="stylesheet" type="text/css" href="vendor/bootstrap/dist/css/bootstrap-theme.min.css"/>
+
     <link rel="stylesheet" type="text/css" href="vendor/jasny-bootstrap/dist/css/jasny-bootstrap.min.css"/>
+
     
 
+​
+
     <!-- User CSS Files -->
+
     <link rel="stylesheet" type="text/css" href="css/index.css"/>
+
     <link rel="stylesheet" type="text/css" href="source/app/home/home.css"/>
+
     <link rel="stylesheet" type="text/css" href="source/app/usage/usage.css"/>
+
     <link rel="stylesheet" type="text/css" href="source/app/login/login.css"/>
+
     <link rel="stylesheet" type="text/css" href="source/app/plan/plan.css"/>
 
+​
+
 </head>
+
 <body class="background">
+
+​
 
     <!-- Header start -->
 
+​
+
     <!-- See http://getbootstrap.com/components/#navbar, you will need to make this look how you like -->
 
+​
+
     <nav class="navbar navbar-inverse navbar-fixed-top" >
+
         <div class="container-fluid">
+
             <!-- Brand and toggle get grouped for better mobile display -->
+
             <div class="navbar-header">
+
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+
                     <span class="sr-only">Toggle navigation</span>
+
                     <span class="icon-bar"></span>
+
                     <span class="icon-bar"></span>
+
                     <span class="icon-bar"></span>
+
                 </button>
+
                 <a class="navbar-brand" href="#/">
+
                     <img width="130"style="position:absolute;" src="image/logo_img.png">
+
                 </a>
+
             </div>
 
+​
+
             <!-- Collect the nav links, forms, and other content for toggling -->
+
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="padding-left:150px">
 
+​
+
                 <ul class="nav navbar-nav navbar-right">
+
                    <!--  <li><a href="#">Link</a></li> -->
+
                     <li class="dropdown">
+
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+
                             <i class="glyphicon glyphicon-user"></i>
+
                             &nbsp;{{user.session.user.username}} <span class="caret"></span>
+
                         </a>
+
                         <ul class="dropdown-menu">
+
                             <li><a href="#">My Profile</a></li>
+
                             <li><a href="#">Edit Profile</a></li>
+
                            <!--  <li><a href="#">Something else here</a></li> -->
+
                             <li role="separator" class="divider"></li>
+
                             <li><a href="#">Log out</a></li>
+
                         </ul>
+
                     </li>
+
                 </ul>
+
             </div><!-- /.navbar-collapse -->
+
         </div><!-- /.container-fluid -->
+
     </nav>
+
+​
 
     <!-- Header end -->
 
+​
+
     <!-- This is where our main views will be displayed -->
+
     <!-- See http://getbootstrap.com/css/#overview-container -->
+
    <!--  <div class="container">
+
         <div class="row">
 
+​
+
             
+
             <div class="col-md-12"> -->
+
             <!-- uiView="main" correlates to $stateProvider views -->
+
                 <!-- <div ui-view="main"></div>
+
             </div>
+
         </div>
+
     </div> -->
+
+​
 
 <div class="background" ui-view="main"></div>
 
+​
 
+​
+
+​
 
     <!-- Footer start -->
 
+​
+
     <!-- If you wish to have a footer -->
+
     <!-- See http://getbootstrap.com/components/#navbar-fixed-bottom -->
 
-    <nav class=" navbar footer navbar-fixed-bottom" >
+​
+
+    <nav class=" navbar navbar-inverse footer navbar-fixed-bottom" >
+
         <div class="col-sm-12" style="padding:10px;">
+
             <div class="col-md-4 col-sm-4 col-xs-12" style="">
 
+​
+
                 <!--<img src="image/fb1.png">-->
+
                 <a class="tel-icon" style="padding-top: 0px;text-decoration: none;display: block;" href="tel:0800 438 669">
+
                     <span></span>(0800 438 669)
+
                 </a>
+
                 <a class="tel-icon" style="text-decoration: none" href="mailto:help@nowcnz.co.nz">
+
                     <span></span> help@nownz.co.nz
+
                 </a>
+
             </div>
+
             <div class="col-md-4 col-sm-4 col-xs-12" style="">
+
                 <!--<center>-->
 
+​
+
                 <!--</center>-->
+
                 <!--<img src="image/fb1.png">-->
+
             </div>
 
+​
+
             <div class="col-md-4 col-sm-4 col-xs-12" align="right">
+
                 <a href="#"><span class="facebook-icon"></span></a>
+
                 <a href="#"><span class="twitter-icon"></span></a>
+
             </div>
+
         </div>
+
+​
 
         <!-- social media -->
 
+​
+
     </nav>
+
+​
 
     <!-- Footer end -->
 
+​
+
     <!-- Our swagger schema, will be exposed as `SwaggerSchema` -->
+
     <script type="application/javascript" src="http://portal-eit.nownz.co.nz/documentation.js"></script>
 
+​
+
     <!-- Vendor JavaScript Files -->
+
     <script type="application/javascript" src="vendor/angular/angular.min.js"></script>
+
     <script type="application/javascript" src="vendor/angular-ui-router/release/angular-ui-router.min.js"></script>
+
     <script type="application/javascript" src="vendor/jquery/dist/jquery.min.js"></script>
+
     <script type="application/javascript" src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+
     <script type="application/javascript" src="vendor/jasny-bootstrap/dist/js/jasny-bootstrap.min.js"></script>
+
     <script type="application/javascript" src="vendor/lodash/lodash.min.js"></script>
+
     <script type="application/javascript" src="vendor/moment/min/moment.min.js"></script>
+
+​
 
     <script type="application/javascript" src="vendor/swagger-js/browser/swagger-client.min.js"></script>
 
+​
+
+​
 
     <script type="application/javascript" src="vendor/jquery-circle-progress/dist/circle-progress.js"></script>
 
+​
 
+​
 
+​
+
+​
 
     <!-- User JavaScript Files -->
 
+​
+
     <!-- Main file -->
+
     <script type="application/javascript" src="source/app.js"></script>
 
+​
+
     <!-- Factories -->
+
     <script type="application/javascript" src="source/common/factories/swagger/swagger.js"></script>
+
     <script type="application/javascript" src="source/common/factories/session/session.js"></script>
+
     <script type="application/javascript" src="source/common/factories/api/api.js"></script>
+
     <script type="application/javascript" src="source/common/factories/user/user.js"></script>
+
     <script type="application/javascript" src="source/common/factories/pageLinks/pageLinks.js"></script>
+
+​
 
     <!-- Controllers -->
 
+​
+
     <!--<script type="application/javascript" src="source/common/factories/pageLinks/pageLinksJSON.json"></script>-->
+
     <script type="application/javascript" src="source/app/home/home.js"></script>
+
     <script type="application/javascript" src="source/app/usage/usage.js"></script>
-    <script type="application/javascript" src="source/app/billing/billing.js"></script>
+
+    <!--<script type="application/javascript" src="source/app/billing/billing.js"></script>
+
     <!--<script type="application/javascript" src="source/app/contact/contact.js"></script>-->
+
     <script type="application/javascript" src="source/app/login/login.js"></script>
+
     <script type="application/javascript" src="source/app/plan/plan.js"></script>
 
+    <script type="application/javascript" src="source/app/order/order.js"></script>
+
+​
+
+​
 
 <!-- Menu Toggle Script -->
+
    
+
 </body>
+
 </html>
+

@@ -14,7 +14,8 @@
     var data = [
         {"page": "Usage", "url": "#/usage"},
         {"page": "Payments", "url": "#/billing"},
-        {"page": "Plan", "url": "#/plan"}
+        {"page": "Plan", "url": "#/plan"},
+        {"page": "Order", "url": "#/order"}
 
     ];
         //return this.$http.get('/source/common/factories/pageLinks/JsonCData.json')
