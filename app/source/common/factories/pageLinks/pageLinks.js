@@ -14,6 +14,9 @@
     var data = [
         {"page": "Usage", "url": "#/usage"},
         {"page": "Payments", "url": "#/billing"},
+        {"page": "UserProfile", "url": "#/userProfile"},
+        {"page": "ChangeProfile", "url": "#/changeUserProfile"},
+        {"page": "Password", "url": "#/password"},
         {"page": "Plan", "url": "#/plan"}
 
     ];
