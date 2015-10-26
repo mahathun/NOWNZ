@@ -25,7 +25,9 @@
   ]);
 
   function LoginCtrl( $scope, User, $location ) {
-
+    if(User.session.token!=null){
+      $location.path('/usage');
+    }
     $scope.username = '';
     $scope.password = '';
     $scope.callb=null;

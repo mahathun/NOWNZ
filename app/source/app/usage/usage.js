@@ -34,7 +34,7 @@
 
 
     $scope.user = User;
-    console.log($scope.user.session.user.name);
+    //console.log($scope.user.session.user.name);
     //calling usage
 
     var usage = {call:null, data:null, publicData: null};
@@ -139,9 +139,9 @@
     var val2 = (usage.data.limit==0)?1:((usage.data.limit - usage.data.used)/usage.data.limit);
     var val3 = usage.publicData.used;
 
-    console.log( usage);
+    //console.log( usage);
 
-    console.log(((Math.round(val2*10)==10)?'9':(Math.round(val2*10)))+'\n'+colorArray[((Math.round(val2*10)==10)?'9':(Math.round(val2*10)))]+'\n'+val2);
+    //console.log(((Math.round(val2*10)==10)?'9':(Math.round(val2*10)))+'\n'+colorArray[((Math.round(val2*10)==10)?'9':(Math.round(val2*10)))]+'\n'+val2);
     //console.log(val);
     
     $('#circle1').circleProgress({
@@ -202,7 +202,7 @@
     }
 
     numberOfDays = Math.round(Math.abs((start.getTime() - end.getTime())/(oneDay)));
-    console.log(Math.round(Math.abs((start.getTime() - end.getTime())/(oneDay))));
+    //console.log(Math.round(Math.abs((start.getTime() - end.getTime())/(oneDay))));
 
     $('.remainingDays').html("You have <b>" + numberOfDays + "</b> days remaining for renewal.");
 

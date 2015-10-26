@@ -55,7 +55,7 @@
               $scope.plan.planType = "None";
 
             }
-            console.log(plan);
+            //console.log(plan);
           });
 
 
@@ -68,7 +68,7 @@
           });
     }
 
-    console.log($scope.user.session.user.username);
+    //console.log($scope.user.session.user.username);
     Api.getPlan( )
         .then( function ( plan ) {
           $scope.plan = plan;
@@ -87,7 +87,7 @@
             $scope.plan.planType = "None";
 
           }
-          console.log(plan);
+          //console.log(plan);
         });
 
     Api.getNetworkStatus( )
@@ -108,7 +108,7 @@
       "charge": 0
     };
     $scope.changePlan = function (planType) {
-      console.log(planType);
+      //console.log(planType);
 
       switch (planType){
         case 'plan1':
@@ -166,7 +166,7 @@
     function change_Plan(p){
       Api.updatePlan( p, null)
           .then( function ( ) {
-            console.log(p);
+            //console.log(p);
             // console.log(status);
             get_Plan();
           });
