@@ -34,7 +34,7 @@
 
 
     $scope.user = User;
-    //console.log($scope.user.session.user.name);
+    console.log($scope.user.session.user.name);
     //calling usage
 
     var usage = {call:null, data:null, publicData: null};

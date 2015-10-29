@@ -203,3 +203,11 @@ hr.fancy-line, hr.fancy-line:before {
     /*background: -ms-radial-gradient(center, ellipse cover, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 75%);*/
     background: radial-gradient(ellipse at center, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 75%);
 }
+
+
+.sublinks{
+    /*padding-left: 10%;*/
+    font-size: .9em;
+    background-color: #454644;
+    /*transition: all 2s;*/
+}

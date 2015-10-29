@@ -13,7 +13,7 @@
     PageLinks.prototype.getLinks = function (  ) {
     var data = [
         {"page": "Usage", "url": "#/usage"},
-        {"page": "Payments", "url": "#/billing"},
+        {"page": "Payments", "url": "#/payment", "subLinks":{"page":"Make a Payment", "url":"#/billing"}},
         {"page": "Plan", "url": "#/plan"}
 
     ];

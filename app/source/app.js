@@ -26,7 +26,9 @@
   ]);
 
 
-  function AppCtrl( $scope, Session, $location ) {
+  function AppCtrl( $scope, Session, $location, User ) {
+
+    $scope.user = User;
 
     function checkLoggedIn( ) {
       if (
@@ -68,7 +70,7 @@
     '$scope',
     'Session',
     '$location',
-
+    'User',
     // The last value in this array will be the function called for your controller
     AppCtrl
   ])

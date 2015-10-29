@@ -45,15 +45,23 @@
             }
 
 
-            if(plan.phone.charge >0 && plan.internet.charge>0){
-              $scope.plan.planType = "Phone and Data";
-            }else if(plan.phone.charge > 0 && plan.internet.charge==0){
-              $scope.plan.planType = "Phone only";
-            }else if(plan.phone.charge == 0 && plan.internet.charge>0){
-              $scope.plan.planType = "Phone only";
-            }else{
-              $scope.plan.planType = "None";
+            //if(plan.phone.charge >0 && plan.internet.charge>0){
+            //  $scope.plan.planType = "Phone and Data";
+            //}else if(plan.phone.charge > 0 && plan.internet.charge==0){
+            //  $scope.plan.planType = "Phone only";
+            //}else if(plan.phone.charge == 0 && plan.internet.charge>0){
+            //  $scope.plan.planType = "Phone only";
+            //}else{
+            //  $scope.plan.planType = "None";
+            //
+            //}
 
+
+
+            if(plan.phone){
+              $scope.plan.planType = "Phone and Data";
+            }else{
+              $scope.plan.planType = "Naked Broadband";
             }
             //console.log(plan);
           });
@@ -77,17 +85,24 @@
             plan.internet.limit  = "Unlimited"
           }
 
-          if(plan.phone.charge >0 && plan.internet.charge>0){
-            $scope.plan.planType = "Phone and Data";
-          }else if(plan.phone.charge > 0 && plan.internet.charge==0){
-            $scope.plan.planType = "Phone only";
-          }else if(plan.phone.charge == 0 && plan.internet.charge>0){
-            $scope.plan.planType = "Phone only";
-          }else{
-            $scope.plan.planType = "None";
+          //if(plan.phone.charge >0 && plan.internet.charge>0){
+          //  $scope.plan.planType = "Phone and Data";
+          //}else if(plan.phone.charge > 0 && plan.internet.charge==0){
+          //  $scope.plan.planType = "Phone only";
+          //}else if(plan.phone.charge == 0 && plan.internet.charge>0){
+          //  $scope.plan.planType = "Phone only";
+          //}else{
+          //  $scope.plan.planType = "None";
+          //
+          //}
 
+
+          if(plan.phone){
+            $scope.plan.planType = "Phone and Data";
+          }else{
+            $scope.plan.planType = "Naked Broadband";
           }
-          //console.log(plan);
+          console.log(plan);
         });
 
     Api.getNetworkStatus( )
@@ -113,9 +128,7 @@
       switch (planType){
         case 'plan1':
               plan = {
-                "phone": {
-                  "charge": 0
-                },
+
                 "internet": {
                   "connection": "ADSL",
                   "limit": 100,
@@ -160,7 +173,7 @@
       }
 
 
-    }
+    };
 
 
     function change_Plan(p){
@@ -171,6 +184,7 @@
             get_Plan();
           });
     }
+
 
   }
 

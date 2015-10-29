@@ -15,7 +15,12 @@
             <ul class="sidebar-nav">
 
                 <li ng-repeat="link in pageLinks">
+
                     <a href="{{link.url}}">{{link.page}}</a>
+
+                    <a ng-if="link.subLinks" class="sublinks" href="{{link.subLinks.url}}">
+                        <i class="glyphicon glyphicon-chevron-right"></i> {{link.subLinks.page}}
+                    </a>
                 </li>
 
 
@@ -27,134 +32,205 @@
         <!-- Page Content -->
         <div id="page-content-wrapper">
             <div class="container-fluid">
-                <div class="head">
-                    <h1>GIVINGEST</h1>
-                </div>
 
 
-                    <div class="row">
-                        <div class="board">
-                            <ul class="nav nav-tabs">
-                                <div class="liner"></div>
-                                <li rel-index="0" class="active">
-                                    <a href="#step-1" class="btn" aria-controls="step-1" role="tab" data-toggle="tab">
-                                        <span><i class="glyphicon glyphicon-user"></i></span>
-                                    </a>
-                                </li>
-                                <li rel-index="1">
-                                    <a href="#step-2" class="btn disabled" aria-controls="step-2" role="tab" data-toggle="tab">
-                                        <span><i class="glyphicon glyphicon-heart"></i></span>
-                                    </a>
-                                </li>
-                                <li rel-index="2">
-                                    <a href="#step-3" class="btn disabled" aria-controls="step-3" role="tab" data-toggle="tab">
-                                        <span><i class="glyphicon glyphicon-plus"></i></span>
-                                    </a>
-                                </li>
-                                <li rel-index="3">
-                                    <a href="#step-4" class="btn disabled" aria-controls="step-4" role="tab" data-toggle="tab">
-                                        <span><i class="glyphicon glyphicon-ok"></i></span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane active" id="step-1">
-
-                                <div class="col-md-12">
-                                    <h3>Business Info</h3>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="control-label">Business Name</label>
-                                            <input  maxlength="100" type="text" required="required" class="form-control" placeholder="Enter Name"  />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="control-label">EIN (used to verify your business)</label>
-                                            <input  maxlength="10" type="text" required="required" class="form-control" placeholder="12-3456789"  />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="subject">
-                                                Type of Business</label>
-                                            <select id="subject" name="subject" class="form-control" required="required">
-                                                <option value="na" selected="">Choose One:</option>
-                                                <option value="service">Restaurant</option>
-                                                <option value="suggestions">Shopping</option>
-                                                <option value="product">Financial</option>
-                                                <option value="product">Retail</option>
-                                                <option value="product">Online</option>
-                                                <option value="product">Other</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="control-label">Website (option)</label>
-                                            <input maxlength="100" type="text"  class="form-control" placeholder="URL" />
-                                        </div>
-                                    </div>
-                                    <h3>Business Location</h3>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="control-label">Street Adress</label>
-                                            <input  maxlength="100" type="text" required="required" class="form-control" placeholder="Enter Address"  />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="control-label">City</label>
-                                            <input  maxlength="40" type="text" required="required" class="form-control" placeholder="Enter City"  />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="control-label">ZIP</label>
-                                            <input  maxlength="5" type="text" required="required" class="form-control" placeholder="Enter ZIP Code"  />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="control-label">State</label>
-                                            <input  maxlength="2" type="text" required="required" class="form-control" placeholder="Enter State"  />
-                                        </div>
-                                    </div>
-                                    <h3>Business Contact</h3>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="control-label">Phone Number</label>
-                                            <input  maxlength="14" type="text" required="required" class="form-control" placeholder="(555) 555-5555"  />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="control-label">Email</label>
-                                            <input  maxlength="100" type="text" required="required" class="form-control" placeholder="Enter Email"  />
-                                        </div>
-                                    </div>
-
-                                    <button id="step-1-next" class="btn btn-lg btn-primary nextBtn pull-right">Next</button>
-                                </div>
+                <div class="">
+                    <div class="heading insetshadow" style="text-align: center">
+                        <h1>Payments</h1>
+                        <hr class="fancy-line">
+                    </div>
+                    <!-- Step Wizard -->
+                    <div class="stepwizard">
+                        <div class="col-md-12 stepwizard-row setup-panel">
+                            <div class="col-sm-4 col-md-4 col-lg-4 stepwizard-step">
+                                <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
+                                <p>Step 1</p>
                             </div>
-                            <div role="tabpanel" class="tab-pane" id="step-2">
-                                <div class="col-md-12">
-                                    <button id="step-2-next" class="btn btn-lg btn-primary nextBtn pull-right">Next</button>
-                                </div>
+                            <div class=" col-sm-4 col-md-4 col-lg-4 stepwizard-step">
+                                <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+                                <p>Step 2</p>
                             </div>
-                            <div role="tabpanel" class="tab-pane" id="step-3">
-                                <div class="col-md-12">
-                                    <button id="step-3-next" class="btn btn-lg btn-primary nextBtn pull-right">Next</button>
-                                </div>
-                            </div>
-                            <div role="tabpanel" class="tab-pane" id="step-4">
-                                <div class="col-md-12">
-                                    <button id="step-4-next" class="btn btn-lg btn-primary pull-right">Continue</button>
-                                </div>
+                            <div class="col-sm-4 col-md-4 col-lg-4 stepwizard-step">
+                                <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="true">3</a>
+                                <p>Step 3</p>
                             </div>
                         </div>
                     </div>
+                    <!-- Step Wizard END -->
+                    <!-- quote form -->
+                    <form class="form-horizontal" role="form" method="post" autocomplete="on" spellcheck="true">
+
+                        <fieldset><!-- form contents -->
+
+                            <!-- Wizard STEP 1 -->
+                            <div class="row setup-content" id="step-1">
+                                <div class="col-sm-12">
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="textinput">Name</label>
+                                        <div class="col-sm-10">
+                                            <div class="input-group">
+                                                <input autocomplete="on" type="text" placeholder="Full Name" class="form-control" required>
+                                                <span class="input-group-addon label-danger"><i class="fa fa-user fa-lg text-white"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="textinput">Email</label>
+                                        <div class="col-sm-10">
+                                            <div class="input-group">
+                                                <input type="email" placeholder="Email Address" class="form-control" required>
+                                                <span class="input-group-addon label-danger"><i class="fa fa-envelope fa-lg text-white"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="textinput">Company</label>
+                                        <div class="col-sm-10">
+                                            <div class="input-group">
+                                                <input type="text" placeholder="Your business name" class="form-control" required>
+                                                <span class="input-group-addon label-danger"><i class="fa fa-building fa-lg text-white"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="textinput">Tel</label>
+                                        <div class="col-sm-4">
+                                            <div class="input-group">
+                                                <input type="tel" placeholder="Main Contact #" class="form-control">
+                                                <span class="input-group-addon bg-success"><i class="fa fa-phone fa-lg text-white"></i></span>
+                                            </div>
+                                        </div>
+
+                                        <label class="col-sm-2 control-label" for="textinput">Postcode</label>
+                                        <div class="col-sm-4">
+                                            <div class="input-group">
+                                                <input id="postcode" type="text" placeholder="Post Code" class="form-control">
+                                                <span class="input-group-addon bg-success"><i class="fa fa-map-marker fa-lg text-white"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="industry">Industry</label>
+                                        <div class="col-sm-10">
+                                            <div class="input-group">
+                                                <span class="input-group-addon label-danger"><i class="fa fa-briefcase fa-lg text-white"></i></span>
+                                                <select id="industry" class="form-control">
+                                                    <option value="" selected disabled>Choose One:</option>
+                                                    <option value="Accountancy">Accountancy</option>
+                                                    <option value="Agricultural">Agricultural</option>
+                                                    <option value="Automotive">Automotive</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p style="display:inline;" class="small col-xs-9 col-sm-offset-2 col-sm-7 text-SI-grey">this is a block of copy for you to write some blurb.</p>
+                                    <button class="btn btn-primary nextBtn col-xs-3 pull-right" type="button" >Next Step <i class="fa fa-angle-double-right"></i> </button>
+                                </div>
+                            </div>
+                            <!-- Wizard STEP 1 END -->
+
+                            <!-- Wizard STEP 2 -->
+                            <div class="row setup-content" id="step-2">
+                                <div class="col-sm-12">
+
+                                    <div class="form-group">
+
+                                        <!-- Text input-->
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="textinput">Requirements</label>
+                                            <div class="col-sm-10">
+                                                <div class="input-group">
+                                                    <textarea rows="6" placeholder="What additional specifics do you require?" class="form-control" required></textarea>
+                                                    <span class="input-group-addon bg-success"><i class="fa fa-list-ol fa-lg text-white"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Text input-->
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="textinput">Web URL</label>
+                                            <div class="col-sm-10">
+                                                <div class="input-group">
+                                                    <input type="url placeholder="www.mybusiness.co.uk" class="form-control" required>
+                                                    <span class="input-group-addon bg-success"><i class="fa fa-globe fa-lg text-white"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <p style="display:inline;" class="small col-xs-9 col-sm-offset-2 col-sm-7">this is a block of copy for you to write some blurb.</p>
+                                        <button class="btn btn-primary nextBtn col-xs-3 pull-right" type="button" >Next Step <i class="fa fa-angle-double-right"></i> </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Wizard STEP 2 END -->
+
+                            <!-- Wizard STEP 3 -->
+                            <div class="row setup-content" id="step-3">
+                                <div class="col-sm-12">
+
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-2 col-sm-10">
+
+                                            <hr>
+
+                                            <ul class="list-inline">
+                                                <li>Process step 1 <i class="fa fa-chevron-right fa-fw text-success"></i></li>
+                                                <li>Process step 2 <i class="fa fa-chevron-right fa-fw text-success"></i></li>
+                                                <li>Process step 3 <i class="fa fa-chevron-right fa-fw text-success"></i></li>
+                                                <li>Process step 4 <i class="fa fa-smile-o fa-fw text-success"></i></li>
+                                                <button class="btn btn-info btn-xs hidden-xs pull-right">example</button>
+                                            </ul>
+
+                                            <div class="row">
+                                                <i class="fa fa-info-circle fa-3x half-top text-danger col-xs-2"></i>
+                                                <p class="small col-xs-10">add some blurb here to explain the above process</p>
+                                            </div>
+
+                                            <hr>
+
+                                            <div class="form-group">
+                                                <div class="col-sm-offset-2 col-sm-10 clearfix">
+                                                    <div class="row">
+                                                        <div class=" col-sm-8">
+                                                            <p>add recapatcha here
+                                                                <!--<div class="g-recaptcha modal-recaptcha" data-sitekey="recapatcha key here"></div>-->
+                                                        </div>
+
+                                                        <!-- SUBMIT FORM BUTTON-->
+                                                        <div class="col-sm-4 pull-right">
+                                                            <button type="submit" value="submit" class="btn btn-block btn-success">Send</button>
+                                                        </div>
+                                                        <!-- SUBMIT FORM BUTTON END-->
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <div class="col-xs-12">
+                                        <div class="row" style="margin-top:-20px;">
+                                            <div class="col-sm-3"><h3>SHARE <i class="fa fa-angle-double-right"></i></h3></div>
+                                            <div class="pull-right col-sm-9 add-top">Add your share code here</div>
+                                    </div>
+                                </div>
+
+                            </div>
+                </div>
+                <!-- Wizard STEP 3 END -->
+                </fieldset><!-- form contents END -->
+                </form>
+            </div>
 
             </div>
         </div>

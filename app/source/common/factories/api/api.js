@@ -123,9 +123,31 @@
             true
         )
     };
+
     //------------------- Plan Ends-------------------------
 
 
+
+    //------------------- payment Start-------------------------
+    //get payment
+    Api.prototype.getTransactions = function ( callback ) {
+
+        // Callback is optional
+        callback = callback || null;
+
+        return this.call(
+            'billing',
+            'getTransactions',
+            { },
+            callback,
+            true
+        )
+    };
+
+
+
+
+    //------------------- payment Ends-------------------------
 
 
   Api.prototype.call = function ( tag, operationId, options, callback, authenticated ) {
