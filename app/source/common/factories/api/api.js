@@ -127,6 +127,69 @@
     //------------------- Plan Ends-------------------------
 
 
+//------------------- Password Starts -------------------------
+Api.prototype.setPassword = function ( obj,callback ) {
+
+    // Callback is optional
+    callback = callback || null;
+
+    return this.call(
+        'user',
+        'setPassword',
+        {user:obj},
+        callback,
+        true
+    )
+};
+
+//------------------- Passowrd Ends -------------------------
+
+//------------------- User Profile Starts -------------------------
+
+Api.prototype.getUserEmailMobile = function ( callback ) {
+
+  // Callback is optional
+  callback = callback || null;
+
+  return this.call(
+      'user',
+      'getUserContactInfo',
+      { },
+      callback,
+      true
+  )
+};
+
+Api.prototype.getUserProfile = function ( callback ) {
+
+  // Callback is optional
+  callback = callback || null;
+
+  return this.call(
+      'user',
+      'getUser',
+      { },
+      callback,
+      true
+  )
+};
+
+Api.prototype.setUserEmailMobile = function (obj, callback ) {
+
+  // Callback is optional
+  callback = callback || null;
+
+  return this.call(
+      'user',
+      'setUserContactInfo',
+      { user:obj},
+      callback,
+      true
+  )
+};
+
+//------------------- User Profile Ends -------------------------
+
 
     //------------------- payment Start-------------------------
     //get payment

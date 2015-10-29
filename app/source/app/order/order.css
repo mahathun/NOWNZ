@@ -12,6 +12,7 @@
     padding:0px;
 }
 .green-box{
+<<<<<<< HEAD
     background-color: #77A54B;
     min-height: 70px;
     max-height: 70px;
@@ -36,20 +37,62 @@
     color: #B0C4DE;
 }
 ?
+=======
+     background-color: #77A54B;
+     min-height: 70px;
+    max-height: 70px;
+
+    text-align: center;
+    padding-top:1px;
+    border: solid 1px  #77A54B;
+
+
+}
+
+.green-box h4{
+    border: none;
+    padding:0px;
+
+}
+
+
+
+
+.bronze {
+    background-color: #B0C4DE;
+}
+
+.bronze-text {
+    color: #B0C4DE;
+}
+
+>>>>>>> f3ec3e711df0445b20ac9ab730b40c7de5e78217
 .silver {
     color: #fff;
     background-color: #C0C0C0;
 }
+<<<<<<< HEAD
 ?
+=======
+
+>>>>>>> f3ec3e711df0445b20ac9ab730b40c7de5e78217
 .gold {
     color: #fff;
     background-color: #FFD700;
 }
+<<<<<<< HEAD
 ?
 .gold-text {
     color:#FFD700;
 }
 ?
+=======
+
+.gold-text {
+    color:#FFD700;
+}
+
+>>>>>>> f3ec3e711df0445b20ac9ab730b40c7de5e78217
 .content .plan {
     position:relative;
     top:30px;
@@ -62,13 +105,21 @@
     -webkit-transition:all .3s ease-out;
     transition:all .3s ease-out;
 }
+<<<<<<< HEAD
 ?
+=======
+
+>>>>>>> f3ec3e711df0445b20ac9ab730b40c7de5e78217
 .content .plan.featured {
     top:0;
     padding-top:50px;
     padding-bottom:50px;
 }
+<<<<<<< HEAD
 ?
+=======
+
+>>>>>>> f3ec3e711df0445b20ac9ab730b40c7de5e78217
 .content .plan:hover,
 .content .plan.featured {
     background:#77A54B;
@@ -77,23 +128,39 @@
     padding-top:50px;
     padding-bottom:50px;
 }
+<<<<<<< HEAD
 ?
+=======
+
+>>>>>>> f3ec3e711df0445b20ac9ab730b40c7de5e78217
 .content .plan h2 {
     font-size:28px;
     font-weight:700;
     margin-bottom:0;
     text-transform:uppercase;
 }
+<<<<<<< HEAD
 ?
 .content .plan.featured h2 {
     margin-bottom:10px;
 }
 ?
+=======
+
+.content .plan.featured h2 {
+    margin-bottom:10px;
+}
+
+>>>>>>> f3ec3e711df0445b20ac9ab730b40c7de5e78217
 .content .plan p {
     margin-bottom:5px;
     font-weight:400;
 }
+<<<<<<< HEAD
 ?
+=======
+
+>>>>>>> f3ec3e711df0445b20ac9ab730b40c7de5e78217
 .content .plan .icon {
     display:inline-block;
     margin-bottom:30px;
@@ -105,33 +172,56 @@
     -webkit-transition:all .3s ease-out;
     transition:all .3s ease-out;
 }
+<<<<<<< HEAD
 ?
+=======
+
+>>>>>>> f3ec3e711df0445b20ac9ab730b40c7de5e78217
 .content .plan.featured .icon,
 .content .plan:hover .icon{
     color:#5cc9df;
     background:#fff;
 }
+<<<<<<< HEAD
 ?
+=======
+
+>>>>>>> f3ec3e711df0445b20ac9ab730b40c7de5e78217
 .content .plan .btn-pricing {
     margin-top:20px;
     margin-bottom:0;
     font-size:16px;
     padding:10px 20px;
 }
+<<<<<<< HEAD
 ?
+=======
+
+>>>>>>> f3ec3e711df0445b20ac9ab730b40c7de5e78217
 .content .plan.featured .btn-pricing,
 .content .plan:hover .btn-pricing {
     background: #fff;
     color:#5CC9DF;
 }
+<<<<<<< HEAD
 ?
+=======
+
+>>>>>>> f3ec3e711df0445b20ac9ab730b40c7de5e78217
 .content .plan .price {
     font-size:20px;
     font-weight:100;
     /*line-height:48px;*/
     /*margin-bottom:30px;*/
 }
+<<<<<<< HEAD
 ?
 .content .plan.featured .price {
     margin-bottom:40px;
 }
+=======
+
+.content .plan.featured .price {
+    margin-bottom:40px;
+}
+>>>>>>> f3ec3e711df0445b20ac9ab730b40c7de5e78217
