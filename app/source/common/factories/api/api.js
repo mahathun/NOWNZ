@@ -208,7 +208,36 @@
         )
     };
 
+    //get balance
+    Api.prototype.getBalance= function ( callback ) {
 
+        // Callback is optional
+        callback = callback || null;
+
+        return this.call(
+            'billing',
+            'getBalance',
+            { },
+            callback,
+            true
+        )
+    };
+
+
+    //make a payment
+    Api.prototype.savePayment = function (obj, callback ) {
+
+        // Callback is optional
+        callback = callback || null;
+
+        return this.call(
+            'billing',
+            'createTransaction',
+            { payment:obj},
+            callback,
+            true
+        )
+    };
 
 
     //------------------- payment Ends-------------------------

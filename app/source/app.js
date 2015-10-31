@@ -30,6 +30,13 @@
 
     $scope.user = User;
 
+    $scope.logout = function( ) {
+      $location.path('/login');
+
+      User.logout( );
+    };
+
+
     function checkLoggedIn( ) {
       if (
         (

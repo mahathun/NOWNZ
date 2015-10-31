@@ -40,8 +40,24 @@
                     <hr class="fancy-line">
                 </div>
 
+                <div class="currentBalanceDiv"  >
+                    <span class="currentBalanceDivSpan">Current Balance :</span>
+                    <div ng-class="{'neg' : balance < 0,'pos' : balance > 0}">
+                    <div class="col-md-4 input-group input-group-md" >
+
+                        <span class="input-group-addon">$</span>
+                        <input readonly="readonly" type="text" value="{{balance}}" class="form-control" aria-label="Amount (to the nearest dollar)">
+                        <span class="input-group-addon">.00</span>
+
+                    </div>
+                        </div>
+                </div>
+
                 <div id="customTableClassPayment" class="row ">
                     <div class="col-md-12 ">
+
+
+
 
                         <div class="fresh-table toolbar-color-green">
                             <!--    Available colors for the full background: full-color-blue, full-color-azure, full-color-green, full-color-red, full-color-orange
@@ -49,28 +65,34 @@
                             -->
 
                             <!--<div class="toolbar">-->
-                                <!--<button id="alertBtn" class="btn btn-default">Alert</button>-->
+                                <!--<span>Current Balance</span>-->
+                                <!--<div ng-class="{'negative-balance' : balance < 0,'positive-balance' : balance> 0}">-->
+                                    <!--{{balance}}-->
+                                <!--</div>-->
                             <!--</div>-->
 
                             <table id="fresh-table" class="table">
                                 <thead>
-                                <th data-field="id">ID</th>
+                                <th data-field="id" data-sortable="true">Date</th>
                                 <th data-field="name" data-sortable="true">Name</th>
-                                <th data-field="salary" data-sortable="true">Salary</th>
-                                <th data-field="country" data-sortable="true">Country</th>
-                                <th data-field="city">City</th>
-                                <th data-field="actions" data-formatter="operateFormatter" data-events="operateEvents">Actions</th>
+                                <th data-field="reason" data-sortable="true">Reason</th>
+                                <th data-field="cardNumber" data-sortable="true">Card Number</th>
+                                <th data-field="amount" data-sortable="true">Amount</th>
+                                <!--<th data-field="country" data-sortable="true">Country</th>-->
+                                <!--<th data-field="city">City</th>-->
+                                <!--<th data-field="actions" data-formatter="operateFormatter" data-events="operateEvents">Actions</th>-->
                                 </thead>
                                 <tbody>
 
-                                <tr ng-repeat="i in paymentHistory">
+                                <tr ng-repeat="payment in paymentHistory" ng-class="{'negative' : payment.amount < 0,'positive' : payment.amount> 0}">
 
-                                    <td >{{i}}</td>
-                                    <td>gg</td>
-                                    <td>gg</td>
-                                    <td>Niger</td>
-                                    <td>Oud-Turnhout</td>
-                                    <td></td>
+                                    <td >{{payment.date | date :'MMM d, y h:mm:ss a': '+12:00'}}</td>
+                                    <td>{{payment.card.name}}</td>
+                                    <td>{{payment.reason}}</td>
+                                    <td>{{payment.card.number}}</td>
+                                    <td>{{payment.amount}}</td>
+                                    <!--<td>Oud-Turnhout</td>-->
+                                    <!--<td></td>-->
 
 
                                 </tr>

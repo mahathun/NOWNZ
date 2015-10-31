@@ -905,7 +905,7 @@
     /*filter: alpha(opacity=100);*/
     /*outline: 0 !important;*/
 /*}*/
-#customTableClassPayment .has-success .form-control, .has-error .form-control, .has-success .form-control:focus, .has-error .form-control:focus {
+#customTableClassPayment .has-success .form-control,#customTableClassPayment .has-error .form-control,#customTableClassPayment .has-success .form-control:focus,#customTableClassPayment .has-error .form-control:focus {
     border-color: #E3E3E3;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -954,7 +954,7 @@
     border: 1px solid #E3E3E3;
     border-radius: 4px;
 }
-#customTableClassPayment .has-success .input-group-addon, .has-error .input-group-addon {
+#customTableClassPayment .has-success .input-group-addon,#customTableClassPayment .has-error .input-group-addon {
     background-color: #FFFFFF;
     border: 1px solid #E3E3E3;
 }
@@ -966,16 +966,16 @@
     border-color: #05AE0E;
     color: #05AE0E;
 }
-#customTableClassPayment .form-control:focus + .input-group-addon, .form-control:focus ~ .input-group-addon {
+#customTableClassPayment .form-control:focus + .input-group-addon,#customTableClassPayment .form-control:focus ~ .input-group-addon {
     background-color: #FFFFFF;
     border-color: #9A9A9A;
 }
 
-#customTableClassPayment .input-group .form-control:first-child, .input-group-addon:first-child, .input-group-btn:first-child > .dropdown-toggle, .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle) {
+#customTableClassPayment .input-group .form-control:first-child,#customTableClassPayment .input-group-addon:first-child,#customTableClassPayment .input-group-btn:first-child > .dropdown-toggle,#customTableClassPayment .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle) {
     border-right: 0 none;
 }
 
-#customTableClassPayment .input-group .form-control:last-child, .input-group-addon:last-child, .input-group-btn:last-child > .dropdown-toggle, .input-group-btn:first-child > .btn:not(:first-child) {
+#customTableClassPayment .input-group .form-control:last-child,#customTableClassPayment .input-group-addon:last-child,#customTableClassPayment .input-group-btn:last-child > .dropdown-toggle,#customTableClassPayment .input-group-btn:first-child > .btn:not(:first-child) {
     border-left: 0 none;
 }
 
@@ -1113,7 +1113,7 @@
 }
 #customTableClassPayment .fresh-table .fixed-table-toolbar {
     border-radius: 10px 10px 0 0;
-    padding: 10px 10px;
+    padding: 0px 10px;
     color: #666666;
 }
 #customTableClassPayment .fresh-table .fixed-table-toolbar .dropdown-menu {
@@ -1538,4 +1538,53 @@
 }
 #customTableClassPayment .fresh-table .fa {
     min-width: 18px;
+}
+
+#customTableClassPayment .negative {
+    background-color: rgba(255, 0, 0, 0.29);
+    color:#FF0000;
+}
+
+#customTableClassPayment .positive-balance{
+    border:solid 2px;
+    border-radius: 3px;
+    border-color: #B7F16D;
+    /*background-color:red;*/
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+    padding:15px;font-size: 20px;
+
+}
+
+.currentBalanceDiv{
+    padding: 20px 0px;
+}
+
+.currentBalanceDivSpan{
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bolder;
+    color: rgba(160, 160, 160, 1);
+}
+
+.currentBalanceDiv .pos .input-group span{
+    background-color: #7CC51D;
+
+}
+
+.currentBalanceDiv .pos .input-group  input {
+    background-color: #F9F9F9;
+    text-align: right;
+}
+
+.currentBalanceDiv .neg .input-group span{
+    background-color: #eb0305;
+
+}
+
+.currentBalanceDiv .neg .input-group  input {
+    background-color: rgba(255, 0, 0, 0.29);
+    text-align: right;
+    color: #fffdfd;
 }

@@ -30,12 +30,59 @@
     $scope.pageLinks  = null;
     //var test = PageLinks;
     $scope.pageLinks = PageLinks.getLinks();
-
+    $scope.cardError = false;
+    $scope.paymentSuccess = false;
 
 
     $scope.user = User;
 
     //calling usage
+
+    $scope.payNow = function(){
+
+      var payment =  {
+        "amount": $scope.amount,
+        "reason": $scope.reason,
+        "card": {
+          "number": $scope.cardNo,
+          "name": $scope.name,
+          "security": {
+            "number": $scope.securityNo,
+            "month": $scope.expiryMonth,
+            "year": $scope.expiryYear
+          }
+        }
+      };
+      console.log(payment);
+
+      Api.savePayment( payment )
+          .then( function ( pay ) {
+            //$scope.username = username;
+            console.log("success");
+
+            payment_Success();
+          }, function errorCallback(response) {
+            showCardError()
+          });
+
+
+
+      function payment_Success(){
+        $scope.cardError = false;
+        $scope.paymentSuccess = true;
+
+        setTimeout(function(){$('.nextBtn').trigger('click')},1000);
+
+      }
+      function showCardError(){
+        $scope.cardError = true;
+        $scope.paymentSuccess = false;
+
+
+
+      }
+
+    }
 
 
 
@@ -56,6 +103,8 @@
 
 
 }( ));
+
+
 
 function initSteps(){
 
@@ -85,14 +134,22 @@ function initSteps(){
     var curStep = $(this).closest(".setup-content"),
         curStepBtn = curStep.attr("id"),
         nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
-        curInputs = curStep.find("input[type='text'],input[type='email'],select[id='industry']"),
+        curInputs = curStep.find("input[type='text'],input[type='email'],input[id='amount']"),
         isValid = true;
 
     $(".form-group").removeClass("has-error");
     for(var i=0; i<curInputs.length; i++){
       if (!curInputs[i].validity.valid){
+        console.log(curInputs[i]);
         isValid = false;
         $(curInputs[i]).closest(".form-group").addClass("has-error");
+      }
+
+      if(i==2 && curInputs[i].value<0){
+
+        isValid = false;
+        $(curInputs[i]).closest(".form-group").addClass("has-error");
+
       }
     }
 
@@ -151,13 +208,21 @@ function initSteps(){
     $scope.paymentHistory = {};
     Api.getTransactions( )
         .then( function ( transactions ) {
+
           $scope.paymentHistory = transactions;
           console.log($scope.paymentHistory);
 
-          initTable();
+         setTimeout(function(){ initTable()}, 500) ;
         });
 
+    Api.getBalance( )
+        .then( function ( balance ) {
 
+          $scope.balance= -1* parseInt(balance.value);
+          console.log($scope.balance);
+
+
+        });
 
 
   }
@@ -192,8 +257,8 @@ function initTable(){
       showColumns: true,
       pagination: true,
       striped: true,
-      pageSize: 4,
-      pageList: [4,8,25,50,100],
+      pageSize: 3,
+      pageList: [3,8,25,50,100],
 
       formatShowingRows: function(pageFrom, pageTo, totalRows){
         //do nothing here, we don't want to show the text "showing x of y from..."
@@ -203,8 +268,8 @@ function initTable(){
       },
       icons: {
         refresh: 'fa fa-refresh',
-        toggle: 'fa fa-th-list',
-        columns: 'fa fa-columns',
+        toggle: 'glyphicon glyphicon-th-list',
+        columns: 'glyphicon glyphicon-option-vertical',
         detailOpen: 'fa fa-plus-circle',
         detailClose: 'fa fa-minus-circle'
       }

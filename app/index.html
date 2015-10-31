@@ -58,208 +58,103 @@
 
 </head>
 
-<body class="background">
+<body class="background-index">
 
 ​
 
-    <!-- Header start -->
+<!-- Header start -->
 
-​
+<!-- See http://getbootstrap.com/components/#navbar, you will need to make this look how you like -->
 
-    <!-- See http://getbootstrap.com/components/#navbar, you will need to make this look how you like -->
+<nav class="navbar navbar-inverse navbar-fixed-top" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#/">
+                <img width="130"style="position:absolute;" src="image/logo_img.png">
+            </a>
+        </div>
 
-​
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="padding-left:150px">
 
-    <nav class="navbar navbar-inverse navbar-fixed-top" >
+            <ul class="nav navbar-nav navbar-right" ng-if="user.session.token">
+                <!--  <li><a href="#">Link</a></li> -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <i class="glyphicon glyphicon-user"></i>
+                        &nbsp;{{user.session.user.username}} <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">My Profile</a></li>
+                        <li><a href="#">Edit Profile</a></li>
+                        <!--  <li><a href="#">Something else here</a></li> -->
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#" ng-click="logout()">Log out</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
 
-        <div class="container-fluid">
-
-            <!-- Brand and toggle get grouped for better mobile display -->
-
-            <div class="navbar-header">
-
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-
-                    <span class="sr-only">Toggle navigation</span>
-
-                    <span class="icon-bar"></span>
-
-                    <span class="icon-bar"></span>
-
-                    <span class="icon-bar"></span>
-
-                </button>
-
-                <a class="navbar-brand" href="#/">
-
-                    <img width="130"style="position:absolute;" src="image/logo_img.png">
-
-                </a>
-
-            </div>
-
-​
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="padding-left:150px">
-
-​
-
-                <ul class="nav navbar-nav navbar-right">
-
-                   <!--  <li><a href="#">Link</a></li> -->
-
-                    <li class="dropdown">
-
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-
-                            <i class="glyphicon glyphicon-user"></i>
-
-                            &nbsp;{{user.session.user.username}} <span class="caret"></span>
-
-                        </a>
-
-                        <ul class="dropdown-menu">
-
-                            <li><a href="#">My Profile</a></li>
-
-                            <li><a href="#">Edit Profile</a></li>
-
-                           <!--  <li><a href="#">Something else here</a></li> -->
-
-                            <li role="separator" class="divider"></li>
-
-                            <li><a href="#">Log out</a></li>
-
-                        </ul>
-
-                    </li>
-
-                </ul>
-
-            </div><!-- /.navbar-collapse -->
-
-        </div><!-- /.container-fluid -->
-
-    </nav>
-
-​
-
-    <!-- Header end -->
+<!-- Header end -->
 
 
     <!-- This is where our main views whill be displayed -->
 
 ​
-
-    <!-- This is where our main views will be displayed -->
-
-
-    <!-- See http://getbootstrap.com/css/#overview-container -->
-
-   <!--  <div class="container">
-
-        <div class="row">
-
-            <div class="col-md-12"> -->
-
-            <!-- uiView="main" correlates to $stateProvider views -->
-
-                <!-- <div ui-view="main"></div>
-
-            </div>
-
-        </div>
-
-    </div> -->
-
-​
-
 <div class="background" ui-view="main"></div>
 
 ​
 
-​
+<!-- Footer start -->
 
-​
+<!-- If you wish to have a footer -->
+<!-- See http://getbootstrap.com/components/#navbar-fixed-bottom -->
 
-    <!-- Footer start -->
+<nav class=" navbar navbar-inverse footer navbar-fixed-bottom" >
+    <div class="col-sm-12" style="padding:10px;">
+        <div class="col-md-4 col-sm-4 col-xs-12" style="">
 
-​
+            <!--<img src="image/fb1.png">-->
+            <a class="tel-icon" style="padding-top: 0px;text-decoration: none;display: block;" href="tel:0800 438 669">
+                <span></span>(0800 438 669)
+            </a>
+            <a class="tel-icon" style="text-decoration: none" href="mailto:help@nowcnz.co.nz">
+                <span></span> help@nownz.co.nz
+            </a>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-12" style="">
+            <!--<center>-->
 
-    <!-- If you wish to have a footer -->
-
-    <!-- See http://getbootstrap.com/components/#navbar-fixed-bottom -->
-
-
-
-    <nav class=" navbar navbar-inverse footer navbar-fixed-bottom" >
-
-
-        <div class="col-sm-12" style="padding:10px;">
-
-            <div class="col-md-4 col-sm-4 col-xs-12" style="">
-
-​
-
-                <!--<img src="image/fb1.png">-->
-
-                <a class="tel-icon" style="padding-top: 0px;text-decoration: none;display: block;" href="tel:0800 438 669">
-
-                    <span></span>(0800 438 669)
-
-                </a>
-
-                <a class="tel-icon" style="text-decoration: none" href="mailto:help@nowcnz.co.nz">
-
-                    <span></span> help@nownz.co.nz
-
-                </a>
-
-            </div>
-
-            <div class="col-md-4 col-sm-4 col-xs-12" style="">
-
-                <!--<center>-->
-
-​
-
-                <!--</center>-->
-
-                <!--<img src="image/fb1.png">-->
-
-            </div>
-
-​
-
-            <div class="col-md-4 col-sm-4 col-xs-12" align="right">
-
-                <a href="#"><span class="facebook-icon"></span></a>
-
-                <a href="#"><span class="twitter-icon"></span></a>
-
-            </div>
-
+            <!--</center>-->
+            <!--<img src="image/fb1.png">-->
         </div>
 
-​
+        <div class="col-md-4 col-sm-4 col-xs-12" align="right">
+            <a href="#"><span class="facebook-icon"></span></a>
+            <a href="#"><span class="twitter-icon"></span></a>
+        </div>
+    </div>
 
-        <!-- social media -->
+    <!-- social media -->
 
-​
+</nav>
 
-    </nav>
-
-​
-
-    <!-- Footer end -->
+<!-- Footer end -->
 
 ​
 
     <!-- Our swagger schema, will be exposed as `SwaggerSchema` -->
 
-    <script type="application/javascript" src="http://portal-eit.nownz.co.nz/documentation.js"></script>
+<script type="application/javascript" src="http://portal-eit.nownz.co.nz/documentation.js"></script>
 
 ​
 
@@ -352,7 +247,7 @@
     <script type="application/javascript" src="source/app/order/order.js"></script>
 
 
-    <script type="application/javascript" src="source/app/order/order.js"></script>
+    <!--<script type="application/javascript" src="source/app/order/order.js"></script>-->
 
 ​
 

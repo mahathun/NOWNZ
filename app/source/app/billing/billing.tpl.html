@@ -70,103 +70,123 @@
                                         <label class="col-sm-2 control-label" for="textinput">Name</label>
                                         <div class="col-sm-10">
                                             <div class="input-group">
-                                                <input autocomplete="on" type="text" placeholder="Full Name" class="form-control" required>
-                                                <span class="input-group-addon label-danger"><i class="fa fa-user fa-lg text-white"></i></span>
+                                                <input autocomplete="on" type="text" ng-model="name" placeholder="Full Name" class="form-control" required>
+                                                <span class="input-group-addon label-success"><i class="glyphicon glyphicon-user text-white"></i></span>
                                             </div>
                                         </div>
                                     </div>
 
                                     <!-- Text input-->
                                     <div class="form-group">
-                                        <label class="col-sm-2 control-label" for="textinput">Email</label>
+                                        <label class="col-sm-2 control-label" for="textinput">Reason</label>
                                         <div class="col-sm-10">
                                             <div class="input-group">
-                                                <input type="email" placeholder="Email Address" class="form-control" required>
-                                                <span class="input-group-addon label-danger"><i class="fa fa-envelope fa-lg text-white"></i></span>
+                                                <input type="text" placeholder="Reason" ng-model="reason" class="form-control" required>
+                                                <span class="input-group-addon label-success"><i class="glyphicon glyphicon-info-sign fa-lg text-white"></i></span>
                                             </div>
                                         </div>
                                     </div>
 
                                     <!-- Text input-->
                                     <div class="form-group">
-                                        <label class="col-sm-2 control-label" for="textinput">Company</label>
+                                        <label class="col-sm-2 control-label" for="textinput">Amount</label>
                                         <div class="col-sm-10">
                                             <div class="input-group">
-                                                <input type="text" placeholder="Your business name" class="form-control" required>
-                                                <span class="input-group-addon label-danger"><i class="fa fa-building fa-lg text-white"></i></span>
+                                                <input id="amount" type="number" placeholder="Enter the Amount" ng-model="amount" class="form-control" required>
+                                                <span class="input-group-addon label-success"><i class="glyphicon glyphicon-usd fa-lg text-white"></i></span>
                                             </div>
                                         </div>
                                     </div>
 
                                     <!-- Text input-->
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label" for="textinput">Tel</label>
-                                        <div class="col-sm-4">
-                                            <div class="input-group">
-                                                <input type="tel" placeholder="Main Contact #" class="form-control">
-                                                <span class="input-group-addon bg-success"><i class="fa fa-phone fa-lg text-white"></i></span>
-                                            </div>
-                                        </div>
+                                    <!--<div class="form-group">-->
+                                        <!--<label class="col-sm-2 control-label" for="textinput">Amount</label>-->
+                                        <!--<div class="col-sm-4">-->
+                                            <!--<div class="input-group">-->
+                                                <!--<input type="tel" placeholder="Main Contact #" class="form-control">-->
+                                                <!--<span class="input-group-addon bg-success"><i class="fa fa-phone fa-lg text-white"></i></span>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
 
-                                        <label class="col-sm-2 control-label" for="textinput">Postcode</label>
-                                        <div class="col-sm-4">
-                                            <div class="input-group">
-                                                <input id="postcode" type="text" placeholder="Post Code" class="form-control">
-                                                <span class="input-group-addon bg-success"><i class="fa fa-map-marker fa-lg text-white"></i></span>
-                                            </div>
-                                        </div>
-                                    </div>
+                                        <!--<label class="col-sm-2 control-label" for="textinput">Postcode</label>-->
+                                        <!--<div class="col-sm-4">-->
+                                            <!--<div class="input-group">-->
+                                                <!--<input id="postcode" type="text" placeholder="Post Code" class="form-control">-->
+                                                <!--<span class="input-group-addon bg-success"><i class="fa fa-map-marker fa-lg text-white"></i></span>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
 
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label" for="industry">Industry</label>
-                                        <div class="col-sm-10">
-                                            <div class="input-group">
-                                                <span class="input-group-addon label-danger"><i class="fa fa-briefcase fa-lg text-white"></i></span>
-                                                <select id="industry" class="form-control">
-                                                    <option value="" selected disabled>Choose One:</option>
-                                                    <option value="Accountancy">Accountancy</option>
-                                                    <option value="Agricultural">Agricultural</option>
-                                                    <option value="Automotive">Automotive</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p style="display:inline;" class="small col-xs-9 col-sm-offset-2 col-sm-7 text-SI-grey">this is a block of copy for you to write some blurb.</p>
-                                    <button class="btn btn-primary nextBtn col-xs-3 pull-right" type="button" >Next Step <i class="fa fa-angle-double-right"></i> </button>
+
+                                    <button class="btn btn-success nextBtn col-xs-3 pull-right" type="button" >Next <i class="fa fa-angle-double-right"></i> </button>
                                 </div>
                             </div>
                             <!-- Wizard STEP 1 END -->
 
                             <!-- Wizard STEP 2 -->
                             <div class="row setup-content" id="step-2">
-                                <div class="col-sm-12">
+                                <div class="credit-card-div">
+                                    <div class="panel panel-success" style="border:none">
 
-                                    <div class="form-group">
+                                        <div class="panel-heading col-md-6 col-md-offset-3">
 
-                                        <!-- Text input-->
-                                        <div class="form-group">
-                                            <label class="col-sm-2 control-label" for="textinput">Requirements</label>
-                                            <div class="col-sm-10">
-                                                <div class="input-group">
-                                                    <textarea rows="6" placeholder="What additional specifics do you require?" class="form-control" required></textarea>
-                                                    <span class="input-group-addon bg-success"><i class="fa fa-list-ol fa-lg text-white"></i></span>
+                                            <div class="row">
+                                                <div class="col-md-12" >
+                                                    <div class="alert alert-danger" role="alert" ng-if="cardError">
+                                                        Error Completing the Payment. Make sure you have entered correct data
+                                                    </div>
+
+                                                    <div class="alert alert-success" role="alert" ng-if="paymentSuccess">
+                                                        Payment Successful
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+
+                                            <div class="row " style="margin-bottom: 10px">
+                                                <div class="col-md-10 col-sm-10 col-xs-9">
+                                                    <input type="text" class="form-control" placeholder="Enter Card Number" ng-model="cardNo">
+                                                </div>
+                                                <div class="col-md-1 col-sm-2 col-xs-3" style="padding-left: 0px;">
+                                                    <img src="source/app/billing/img/1.png" class="img-rounded" style="padding-left: 0px">
                                                 </div>
                                             </div>
-                                        </div>
+                                            <div class="row " style="vertical-align: middle;margin-bottom: 20px">
 
-                                        <!-- Text input-->
-                                        <div class="form-group">
-                                            <label class="col-sm-2 control-label" for="textinput">Web URL</label>
-                                            <div class="col-sm-10">
-                                                <div class="input-group">
-                                                    <input type="url placeholder="www.mybusiness.co.uk" class="form-control" required>
-                                                    <span class="input-group-addon bg-success"><i class="fa fa-globe fa-lg text-white"></i></span>
+                                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                                    <span class="help-block text-muted small-font"> Expiry Month</span>
+                                                    <input type="text" class="form-control" placeholder="MM" ng-model="expiryMonth">
+                                                </div>
+                                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                                    <span class="help-block text-muted small-font">  Expiry Year</span>
+                                                    <input type="text" class="form-control" ng-model="expiryYear" placeholder="YY">
+                                                </div>
+                                                <!--<div class="col-md-3 col-sm-3 col-xs-3">-->
+                                                    <!--<span class="help-block text-muted small-font">  CCV</span>-->
+                                                    <!--<input type="text" class="form-control" placeholder="CCV">-->
+                                                <!--</div>-->
+                                                <button class=" hidden btn btn-success nextBtn col-xs-3 pull-right" type="button" >Next <i class="fa fa-angle-double-right"></i> </button>
+
+                                            </div>
+
+                                            <div class="row " style="vertical-align: middle;margin-bottom: 20px">
+
+                                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                                    <input type="text" class="form-control" placeholder="CSC" ng-model="securityNo">
+                                                </div>
+
+                                            </div>
+
+
+                                            <div class="row ">
+
+                                                <div class="col-md-12 col-sm-12 col-xs-12 pad-adjust">
+                                                    <input type="button" class="btn btn-success btn-block" value="PAY NOW" ng-click="payNow()">
                                                 </div>
                                             </div>
-                                        </div>
 
-                                        <p style="display:inline;" class="small col-xs-9 col-sm-offset-2 col-sm-7">this is a block of copy for you to write some blurb.</p>
-                                        <button class="btn btn-primary nextBtn col-xs-3 pull-right" type="button" >Next Step <i class="fa fa-angle-double-right"></i> </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -176,53 +196,13 @@
                             <div class="row setup-content" id="step-3">
                                 <div class="col-sm-12">
 
-                                    <div class="form-group">
-                                        <div class="col-sm-offset-2 col-sm-10">
+                                    <div class="form-group" style="text-align: center">
 
-                                            <hr>
+                                        <h1 style="color: #a4a4a4;padding-top: 20px">Thank you for the payment...</h1>
 
-                                            <ul class="list-inline">
-                                                <li>Process step 1 <i class="fa fa-chevron-right fa-fw text-success"></i></li>
-                                                <li>Process step 2 <i class="fa fa-chevron-right fa-fw text-success"></i></li>
-                                                <li>Process step 3 <i class="fa fa-chevron-right fa-fw text-success"></i></li>
-                                                <li>Process step 4 <i class="fa fa-smile-o fa-fw text-success"></i></li>
-                                                <button class="btn btn-info btn-xs hidden-xs pull-right">example</button>
-                                            </ul>
-
-                                            <div class="row">
-                                                <i class="fa fa-info-circle fa-3x half-top text-danger col-xs-2"></i>
-                                                <p class="small col-xs-10">add some blurb here to explain the above process</p>
-                                            </div>
-
-                                            <hr>
-
-                                            <div class="form-group">
-                                                <div class="col-sm-offset-2 col-sm-10 clearfix">
-                                                    <div class="row">
-                                                        <div class=" col-sm-8">
-                                                            <p>add recapatcha here
-                                                                <!--<div class="g-recaptcha modal-recaptcha" data-sitekey="recapatcha key here"></div>-->
-                                                        </div>
-
-                                                        <!-- SUBMIT FORM BUTTON-->
-                                                        <div class="col-sm-4 pull-right">
-                                                            <button type="submit" value="submit" class="btn btn-block btn-success">Send</button>
-                                                        </div>
-                                                        <!-- SUBMIT FORM BUTTON END-->
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
                                     </div>
 
-                                    <hr>
 
-                                    <div class="col-xs-12">
-                                        <div class="row" style="margin-top:-20px;">
-                                            <div class="col-sm-3"><h3>SHARE <i class="fa fa-angle-double-right"></i></h3></div>
-                                            <div class="pull-right col-sm-9 add-top">Add your share code here</div>
-                                    </div>
                                 </div>
 
                             </div>

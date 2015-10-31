@@ -1,6 +1,6 @@
-#body{
+#loginBody{
     /*margin-bottom: 90px;*/
-    margin-top: 50px;
+    /*margin-top: 50px;*/
 
     background: url(img/DC_Banner_web_V16.png) no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -10,25 +10,20 @@
     height: 100%;
 }
 
-.panel-default {
+#loginBody .panel-default {
     opacity: 0.9;
     margin-top:30px;
 }
-.form-group.last { margin-bottom:0px; }
+#loginBody .form-group.last { margin-bottom:0px; }
 
 @import url(http://fonts.googleapis.com/css?family=Roboto:400);
-body {
-    background-color:#fff;
-    -webkit-font-smoothing: antialiased;
-    font: normal 14px Roboto,arial,sans-serif;
-}
 
-.container {
+#loginBody .container {
     padding: 25px;
     position: fixed;
 }
 
-.form-login {
+#loginBody .form-login {
     opacity: 0.95;
     background-color: #EDEDED;
     padding-top: 10px;
@@ -43,32 +38,33 @@ body {
     margin-top:50px;
 }
 
-h4 {
+#loginBody h4 {
     border:0 solid #fff;
     border-bottom-width:1px;
     padding-bottom:10px;
     text-align: center;
 }
 
-.form-control {
+#loginBody .form-control {
     border-radius: 10px;
 }
 
-.wrapper {
+#loginBody .wrapper {
     text-align: center;
 }
 
-.emptyErrorMsg{
+#loginBody .emptyErrorMsg{
     font-size: .8em;
     color: #eb0305;
     text-align: center;
 
 }
 
-.background-text{
+#loginBody .background-text{
     color: white;
     background-color: rgba(0, 0, 0, 0.48);
     padding: 25px;
     border-radius: 60px;
 
 }
+
