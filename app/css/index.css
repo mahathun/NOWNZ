@@ -37,6 +37,7 @@
 }
 
 .twitter-icon{
+
 	-webkit-background-size: cover;
 	background-size: cover;
 	display: inline-block;
@@ -44,6 +45,7 @@
 	width:30px;
 	background-image: url("../image/twitter1.png");
 }
+
 .twitter-icon:hover{
 
 	background-image: url("../image/twitter2.png");
@@ -80,22 +82,5 @@
 .background{
 
 	background-color: #DAF5BF;
-	margin-top: 50px;
-
-	/*height: calc(100% - 50px)!important;*/
-}
-
-
-body {
-	background-color:#fff;
-	-webkit-font-smoothing: antialiased;
-	font: normal 14px Roboto,arial,sans-serif;
-}
-
-.background-index{
-
-	background-color: #DAF5BF;
-	margin-top: -15px;
-	height: calc(100% - 50px)!important;
 
 }
