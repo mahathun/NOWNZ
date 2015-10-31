@@ -130,20 +130,20 @@
 
 
 //------------------- Password Starts -------------------------
-    Api.prototype.setPassword = function ( obj,callback ) {
+  Api.prototype.setPassword = function ( newPass,oldPass ,callback ) {
 
-        // Callback is optional
+       // Callback is optional
         callback = callback || null;
 
         return this.call(
             'user',
             'setPassword',
-            {user:obj},
+            { old_password:oldPass, new_password:newPass},
             callback,
             true
-        )
-    };
+          )
 
+   };
 //------------------- Passowrd Ends -------------------------
 
 //------------------- User Profile Starts -------------------------
@@ -184,11 +184,12 @@
         return this.call(
             'user',
             'setUserContactInfo',
-            { user:obj},
+            { contact:obj},
             callback,
             true
         )
     };
+
 
 //------------------- User Profile Ends -------------------------
 

@@ -56,12 +56,12 @@
       var newPassword2 = $scope.newPassword2;
       var oldPassword = $scope.oldPassword;
       console.log(newPassword1,newPassword2,oldPassword)
-      if (oldPassword == "eit"){
+      if (oldPassword != ""){
 
         if (newPassword1 == newPassword2){
           var password = {"old_password": oldPassword, "new_password": newPassword1}
-          console.log(password)
-          Api.setPassword(password, null)
+          console.log(oldPassword, newPassword1)
+          Api.setPassword(oldPassword, newPassword1, null)
             .then(function () {
               console.log("password changed");
 
