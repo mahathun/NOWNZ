@@ -37,6 +37,7 @@
         //var test = PageLinks;
         $scope.pageLinks = PageLinks.getLinks();
         $scope.orderStatus = {};
+        $scope.helpText="";
 
         var randomInt = null;
         var colourchange = null;
@@ -48,7 +49,7 @@
         
         console.log(randomInt);
         
-
+        //dummy data showing that the order.status will change the html to show what is needed.
         if (randomInt >5)
         {
             stateOptions = {
@@ -58,6 +59,8 @@
             }
             colourchange = document.getElementById("processing");
             colourchange.style.backgroundColor = "orange";
+            var processingText = "Your order is being processed, if any errors occur we will get in contact with you."
+            $scope.helpText = processingText;
         }
         else if (randomInt <=5)
         {
@@ -68,6 +71,8 @@
             }
             colourchange = document.getElementById("completed");
             colourchange.style.backgroundColor = "green";
+            var completeText = "Your order is completed."
+            $scope.helpText = completeText;
         }
         $scope.orderStatus = stateOptions;
 
