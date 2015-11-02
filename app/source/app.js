@@ -32,7 +32,7 @@
 
     $scope.logout = function( ) {
       $location.path('/login');
-
+      $(".footer").hide();
       User.logout( );
     };
 
@@ -46,7 +46,8 @@
         $location.path( ) !== '/login'
       ) {
         // Redirect if not on login page and no user details
-        $location.path( '/login' )
+        $location.path( '/login' );
+        $(".footer").hide();
       }
     }
 

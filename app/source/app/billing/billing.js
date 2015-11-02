@@ -53,15 +53,22 @@
           }
         }
       };
-      console.log(payment);
+      //console.log(payment);
+
+      $("#loadingScreen").show();
+
 
       Api.savePayment( payment )
           .then( function ( pay ) {
+            $("#loadingScreen").hide();
+
             //$scope.username = username;
             console.log("success");
 
             payment_Success();
           }, function errorCallback(response) {
+            $("#loadingScreen").hide();
+
             showCardError()
           });
 
@@ -206,8 +213,12 @@ function initSteps(){
     //calling usage
 
     $scope.paymentHistory = {};
+    $("#loadingScreen").show();
+
     Api.getTransactions( )
         .then( function ( transactions ) {
+
+          $("#loadingScreen").hide();
 
           $scope.paymentHistory = transactions;
           console.log($scope.paymentHistory);

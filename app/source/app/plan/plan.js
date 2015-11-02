@@ -36,8 +36,12 @@
     $scope.user = User;
 
     function get_Plan(){
+      $("#loadingScreen").show();
+
       Api.getPlan( )
           .then( function ( plan ) {
+            $("#loadingScreen").hide();
+
             $scope.plan = plan;
 
             if(!plan.internet.limit){
@@ -68,17 +72,24 @@
 
 
 
+      $("#loadingScreen").show();
 
       Api.getNetworkStatus( )
           .then( function ( status ) {
+            $("#loadingScreen").hide();
+
             $scope.networkStatus = status;
             // console.log(status);
           });
     }
 
     //console.log($scope.user.session.user.username);
+    $("#loadingScreen").show();
+
     Api.getPlan( )
         .then( function ( plan ) {
+          $("#loadingScreen").hide();
+
           $scope.plan = plan;
 
           if(!plan.internet.limit){

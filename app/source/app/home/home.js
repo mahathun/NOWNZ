@@ -58,6 +58,7 @@
         $scope.plan = plan;
       });
 
+
   }
 
   module.controller( 'HomeCtrl', [
@@ -77,3 +78,4 @@ $("#menu-toggle").click(function(e) {
         $("#wrapper").toggleClass("active");
         $("#carrot").removeClass("glyphicon-chevron-left");
 });
+

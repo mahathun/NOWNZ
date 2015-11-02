@@ -80,7 +80,7 @@
 .background{
 
 	background-color: #DAF5BF;
-	margin-top: 50px;
+	/*margin-top: -10px;*/
 
 	/*height: calc(100% - 50px)!important;*/
 }
@@ -99,3 +99,35 @@ body {
 	height: calc(100% - 50px)!important;
 
 }
+
+/*loading screen start*/
+
+.loading-screen{
+	position: absolute;
+	background-color: rgba(0, 0, 0, 0.69);
+	height: calc(100% - 55px)!important;
+	width: 100%;
+	z-index: 1000;
+	/*opacity: .9;*/
+	text-align: center;
+
+	display: none;
+	position:fixed;
+}
+
+
+.Centerer
+{
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
+.Centered
+{
+	width: 30%;
+	/*height: 30%;*/
+	display: inline-block;
+	vertical-align: middle;
+}
+
+/*loading screen end*/

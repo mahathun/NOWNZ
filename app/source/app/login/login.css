@@ -1,6 +1,6 @@
 #loginBody{
     /*margin-bottom: 90px;*/
-    /*margin-top: 50px;*/
+    padding-top: 50px;
 
     background: url(img/DC_Banner_web_V16.png) no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -68,3 +68,7 @@
 
 }
 
+.background{
+    height: 100%;
+    margin-bottom: 0px;
+}

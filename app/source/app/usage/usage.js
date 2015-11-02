@@ -27,6 +27,8 @@
   ]);
 
   function UsageCtrl( $scope,PageLinks, User, Api,  $location) {
+    $('.background').css('height', '0px');
+
     $scope.pageLinks  = null;
     //var test = PageLinks;
     $scope.pageLinks = PageLinks.getLinks();
@@ -42,7 +44,7 @@
 
     $scope.usage = usage;
 
-
+    $("#loadingScreen").show();
     Api.getCallingUsage( )
       .then( function ( usage ) {
           var call = usage;
@@ -58,6 +60,8 @@
                 //wifi usage
                 Api.getPublicDataUsage( )
                     .then( function ( usage ) {
+                      $("#loadingScreen").hide();
+
                       var publicData = usage;
                       $scope.usage.publicData= publicData;
 
