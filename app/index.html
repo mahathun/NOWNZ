@@ -92,8 +92,8 @@
                         &nbsp;{{user.session.user.username}} <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">My Profile</a></li>
-                        <li><a href="#">Edit Profile</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#myModal">My Profile</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#myModal2">Edit Profile</a></li>
                         <!--  <li><a href="#">Something else here</a></li> -->
                         <li role="separator" class="divider"></li>
                         <li><a href="#" ng-click="logout()">Log out</a></li>
@@ -123,6 +123,138 @@
     <!-- This is where our main views whill be displayed -->
 
 ​
+<!-- model start-->
+
+<!-- Modal 1 -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">My Profile</h4>
+            </div>
+            <div class="modal-body">
+
+
+
+
+                <div class="row">
+                    <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="http://babyinfoforyou.com/wp-content/uploads/2014/10/avatar-300x300.png" class="img-circle img-responsive"> </div>
+
+
+                    <div class=" col-md-9 col-lg-9 ">
+                        <table class="table table-user-information">
+                            <tbody>
+                            <tr>
+                                <td>User Name</td>
+                                <td>{{username}}</td>
+                            </tr>
+                            <tr>
+                                <td>Full Name</td>
+                                <td>{{name}}</td>
+                            </tr>
+                            <tr>
+                                <td>e-mail</td>
+                                <td>{{email}}</td>
+                            </tr>
+
+                            <tr>
+                            <tr>
+                                <td>Mobile</td>
+                                <td>{{mobile}}</td>
+                            </tr>
+
+
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- model 1 end -->
+
+<!-- Modal 2 -->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel2">Edit Profile</h4>
+            </div>
+            <div class="modal-body">
+
+
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="alert alert-success" ng-if="saveProfileSuccess">
+                            Changes were successfully saved.
+                        </div>
+
+                        <div class="alert alert-danger" ng-if="saveProfileError">
+                            Error occurred.
+                        </div>
+
+                    </div>
+                    <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="http://babyinfoforyou.com/wp-content/uploads/2014/10/avatar-300x300.png" class="img-circle img-responsive"> </div>
+
+
+                    <div class=" col-md-9 col-lg-9 ">
+                        <table class="table table-user-information">
+                            <tbody>
+                            <tr>
+                                <td>User Name</td>
+                                <td>{{username}}</td>
+                            </tr>
+                            <tr>
+                                <td>Full Name</td>
+                                <td>{{name}}</td>
+                            </tr>
+                            <tr>
+                                <td>e-mail</td>
+                                <td>
+                                    <input type="text" ng-model="email" placeholder="Change Email" class="form-control"/>
+                                </td>
+                            </tr>
+
+                            <tr>
+                            <tr>
+                                <td>Mobile</td>
+                                <td>
+                                    <input type="text" ng-model="mobile" placeholder="Change Mobile" class="form-control"/>
+                                </td>
+                            </tr>
+
+
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success" ng-click="saveProfile()">Save changes</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- model 2 end -->
+
+
 <div class="background" ui-view="main"></div>
 
 ​

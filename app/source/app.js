@@ -26,9 +26,12 @@
   ]);
 
 
-  function AppCtrl( $scope, Session, $location, User ) {
+  function AppCtrl( $scope, Api, Session, $location, User ) {
 
     $scope.user = User;
+
+    $scope.saveProfileSuccess = false;
+    $scope.saveProfileError = false;
 
     $scope.logout = function( ) {
       $location.path('/login');
@@ -71,11 +74,73 @@
 
     $scope.$on( 'sessionChange', checkLoggedIn )
 
+
+
+    var profile = { };
+    //$scope.usage = profile;
+    //var username, name, create_date;
+    console.log(".");
+    Api.getUserEmailMobile(  )
+        .then( function ( user ) {
+          //$scope.username = username;
+          console.log(user);
+          $scope.email = user.email;
+          $scope.mobile = user.mobile;
+        });
+
+    Api.getUserProfile(  )
+        .then( function ( user ) {
+          console.log(user);
+          $scope.username = user.username;
+          $scope.name = user.name;
+          $scope.create_date = user.create_date.substring(0,10);
+
+        });
+
+
+    $scope.saveProfile = function ( ) {
+
+      $("#loadingScreen").show();
+
+      if ($scope.email == null && $scope.mobile == null){
+        console.log("Nothing inputted")
+      }
+      else if ($scope.email == "") {
+        Api.setUserEmailMobile({"email":$scope.email, "mobile": $scope.mobile})
+            .then( function ( ) {
+              $("#loadingScreen").hide();
+              $scope.saveProfileSuccess = true;
+
+
+              console.log("changed", $scope.email,$scope.mobile)
+            })
+      }
+      else if ($scope.mobile == "") {
+        Api.setUserEmailMobile({"email":$scope.email, "mobile": $scope.mobile})
+            .then( function ( ) {
+              $("#loadingScreen").hide();
+              $scope.saveProfileSuccess = true;
+
+              console.log("changed", $scope.email,$scope.mobile)
+            })
+      }
+      else{
+        Api.setUserEmailMobile({"email":$scope.email, "mobile": $scope.mobile})
+            .then( function ( ) {
+              $("#loadingScreen").hide();
+              $scope.saveProfileSuccess = true;
+
+              console.log("changed", $scope.email,$scope.mobile)
+            })
+      }
+    }
+
   }
 
   module.controller( 'AppCtrl', [
     // Define all your dependencies for your controller like this
     '$scope',
+      'Api',
     'Session',
     '$location',
     'User',

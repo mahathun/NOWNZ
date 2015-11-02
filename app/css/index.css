@@ -107,7 +107,7 @@ body {
 	background-color: rgba(0, 0, 0, 0.69);
 	height: calc(100% - 55px)!important;
 	width: 100%;
-	z-index: 1000;
+	z-index: 1060;
 	/*opacity: .9;*/
 	text-align: center;
 

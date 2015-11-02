@@ -17,9 +17,9 @@
         var data = [
             {"page": "Usage", "url": "#/usage"},
             {"page": "Payments", "url": "#/payment", "subLinks":{"page":"Make a Payment", "url":"#/billing"}},
-            {"page": "UserProfile", "url": "#/userProfile"},
-            {"page": "ChangeProfile", "url": "#/changeUserProfile"},
-            {"page": "Password", "url": "#/password"},
+            //{"page": "UserProfile", "url": "#/userProfile"},
+            //{"page": "ChangeProfile", "url": "#/changeUserProfile"},
+            {"page": "Change Password", "url": "#/password"},
             {"page": "Plan", "url": "#/plan"},
             {"page": "Order", "url": "#/order"}
         ];
