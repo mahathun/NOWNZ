@@ -1,14 +1,15 @@
 .white-box{
     background-color: whitesmoke;
+    border-radius: 50px !important;
     min-height: 70px;
     max-height: 70px;
-    border: solid 1px green;
     text-align: center;
     /*padding:5px 0px;*/
     padding-top:1px;
 }
 .white-box h4{
     border: none;
+    border-radius: 25px;
     padding:0px;
 }
 .green-box{
