@@ -92,7 +92,7 @@
                         &nbsp;{{user.session.user.username}} <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#" data-toggle="modal" data-target="#myModal">My Profile</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="getUserProfile()">My Profile</a></li>
                         <li><a href="#" data-toggle="modal" data-target="#myModal2">Edit Profile</a></li>
                         <!--  <li><a href="#">Something else here</a></li> -->
                         <li role="separator" class="divider"></li>
@@ -147,7 +147,7 @@
                             <tbody>
                             <tr>
                                 <td>User Name</td>
-                                <td>{{username}}</td>
+                                <td ng-model>{{username}}</td>
                             </tr>
                             <tr>
                                 <td>Full Name</td>

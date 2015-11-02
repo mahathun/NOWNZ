@@ -37,6 +37,7 @@
       $location.path('/login');
       $(".footer").hide();
       User.logout( );
+      $location.reload();
     };
 
 
@@ -97,6 +98,25 @@
 
         });
 
+    $scope.getUserProfile = function(){
+      Api.getUserEmailMobile(  )
+          .then( function ( user ) {
+            //$scope.username = username;
+            console.log(user);
+            $scope.email = user.email;
+            $scope.mobile = user.mobile;
+          });
+
+      Api.getUserProfile(  )
+          .then( function ( user ) {
+            console.log(user);
+            $scope.username = user.username;
+            $scope.name = user.name;
+            $scope.create_date = user.create_date.substring(0,10);
+
+          });
+
+    }
 
     $scope.saveProfile = function ( ) {
 
