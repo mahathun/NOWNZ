@@ -50,31 +50,75 @@
           var call = usage;
         $scope.usage.call = call;
 
+          //account balance
+          Api.getBalance( )
+              .then( function ( balance ) {
+
+                $scope.balance= -1* parseInt(balance.value);
+
+                //$scope.balance = -12;
+
+                if($scope.balance < 0){
+                  $scope.balnceFontColor = 'red';
+
+                }else if($scope.balance < 20){
+                  $scope.balnceFontColor = '#CC8400';
+
+                }else{
+                  $scope.balnceFontColor = 'green';
+
+                }
+                console.log($scope.balance);
+
+
+              });
+
+
 
           //data usage
           Api.getDataUsage( )
               .then( function ( usage ) {
                 var data = usage;
                 $scope.usage.data = data;
+                Api.getPlan( )
+                    .then( function ( plan ) {
+                      //$("#loadingScreen").hide();
 
-                //wifi usage
-                Api.getPublicDataUsage( )
-                    .then( function ( usage ) {
-                      $("#loadingScreen").hide();
+                      $scope.usage.data.limit = plan.internet.limit;
 
-                      var publicData = usage;
-                      $scope.usage.publicData= publicData;
+                      //wifi usage
+                      Api.getPublicDataUsage( )
+                          .then( function ( usage ) {
+                            $("#loadingScreen").hide();
 
-                      //initialising the circles
-                      init($scope.usage);
-                      initText($('#circle1'),$scope.usage.call,"MINS", " MINS remaining");
-                      initText($('#circle2'),$scope.usage.data,"DATA", " GB remaining");
-                      initText($('#circle3'),$scope.usage.publicData,"WiFi", " GB used");
+                            var publicData = usage;
+                            $scope.usage.publicData= publicData;
 
-                      renewalDates($scope.usage);
+                            //initialising the circles
+                            init($scope.usage);
+                            initText($('#circle1'),$scope.usage.call,"MINS", " MINS remaining");
+                            initText($('#circle2'),$scope.usage.data,"DATA", " GB remaining");
+                            initText($('#circle3'),$scope.usage.publicData,"WiFi", " GB used");
+
+                            renewalDates($scope.usage);
+
+                            if($scope.balance < 20){
+                              $('[data-toggle="popover"]').popover('show');
+                              setTimeout(function () {$('[data-toggle="popover"]').popover('hide')},8000);
+                            }
+                          });
                     });
+
+
               });
+        }, function error(){
+          User.logout();
+          $location.path('/login')
+          $("#loadingScreen").hide();
+
         });
+
+
 
 
 
@@ -87,6 +131,24 @@
     //initText($('#circle2'),$scope.usage.data,"DATA", " GB remaining");
     //initText($('#circle3'),$scope.usage.publicData,"WiFi", " GB used");
     //temp
+    $(document).ready(function(){
+      $('[data-toggle="popover"]').popover({
+        html:true,
+        content:function(){
+            if($scope.balance>20){
+              return "You have enough credit on your account.But you still can pay<br><a href='/#/billing'>make a payment</a>";
+            }else if($scope.balance>=0){
+              return "Your account balance is running low. Please top up your account<br><a href='/#/billing'>make a payment</a>";
+
+            }else if($scope.balance <0){
+              return "You have a negative balance on your account. Please pay now to avoid any disturbance to your connection.<br><a href='/#/billing'>make a payment</a>";
+            }
+
+        }
+
+      });
+    });
+
 
 
   }
@@ -98,7 +160,8 @@
         });
 
     object.on('circle-animation-progress', function(e, v) {
-      var leftUsageValue = (val.limit==0)?100: ((val.limit-val.used)/val.limit)*100;
+      console.log("LIMIT : " + val.limit);
+      var leftUsageValue = (val.limit==0)?-1: ((val.limit-val.used)/val.limit)*100;
       var obj = $(this).data('circle-progress'),
           ctx = obj.ctx,
           s = obj.size,
@@ -106,6 +169,8 @@
           fill = obj.arcFill;
 
       ctx.save();
+
+
       ctx.font = "bold " + s / 5+ "px sans-serif";
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
@@ -126,7 +191,10 @@
       ctx.stroke();
 
       ctx.font = "bold " + s / 12+ "px sans-serif";
-      ctx.fillText( (typeText=="WiFi")?val.used +text:sv + text , s / 2, s / 1.7);
+      ctx.fillText( (typeText=="WiFi")?val.used +text:(typeText=="DATA" && val.limit==0)? "Unlimited" :(typeText=="DATA" && leftUsageValue<0)?"Over the limit": sv + text , s / 2, s / 1.7);
+      if(leftUsageValue<0 && val.limit!=0){
+        ctx.fillText(sv + " GB Over", s / 2, s / 1.4);
+      }
       ctx.restore();
     });
 
@@ -140,7 +208,7 @@
     var colorArray = ['#FF3000','#FF7000','#FFA000','#FFD000','#FFFF00','#D0FF00','#A0FF00','#70FF00','#40FF00','#10FF00'];
 
     var val1 = (usage.call.limit==0)?1:((usage.call.limit - usage.call.used)/usage.call.limit);
-    var val2 = (usage.data.limit==0)?1:((usage.data.limit - usage.data.used)/usage.data.limit);
+    var val2 = (usage.data.limit==0)?1:(usage.data.limit-usage.data.used<0)?-1:((usage.data.limit - usage.data.used)/usage.data.limit);
     var val3 = usage.publicData.used;
 
     //console.log( usage);
