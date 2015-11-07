@@ -242,6 +242,23 @@
 
 
     //------------------- payment Ends-------------------------
+    //------------------- feedback start-------------------------
+
+    //post feedback
+    Api.prototype.saveFeedback = function (feedback, callback ) {
+
+        // Callback is optional
+        callback = callback || null;
+
+        return this.call(
+            'feedback',
+            'submitFeedback',
+            { text:feedback},
+            callback,
+            false
+        )
+    };
+    //------------------- feedback ends-------------------------
 
 
     Api.prototype.call = function ( tag, operationId, options, callback, authenticated ) {

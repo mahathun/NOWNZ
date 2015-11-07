@@ -76,7 +76,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#/">
+            <a class="navbar-brand" href="http://website.nownz.co.nz/#!/home" target="_blank">
                 <img width="130"style="position:absolute;" src="image/logo_img.png">
             </a>
 
@@ -96,7 +96,10 @@
                     <ul class="dropdown-menu">
                         <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="getUserProfile()">My Profile</a></li>
                         <li><a href="#" data-toggle="modal" data-target="#myModal2">Edit Profile</a></li>
-                        <!--  <li><a href="#">Something else here</a></li> -->
+                        <li role="separator" class="divider"></li>
+
+                        <li><a href="#" data-toggle="modal" data-target="#feedback"><i class="glyphicon glyphicon-info-sign"></i> Bug/Feedback</a></li>
+                        <li><a href="https://support.nownz.co.nz/support/home" target="_blank"><i class="glyphicon glyphicon-question-sign"></i> Help &amp; Support</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="#" ng-click="logout()">Log out</a></li>
                     </ul>
@@ -126,6 +129,52 @@
 
 ​
 <!-- model start-->
+
+<!-- Modal bug/feedback start -->
+<div class="modal fade" id="feedback" tabindex="-1" role="dialog" aria-labelledby="feedbackLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form>
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="feedbackLabel">Bug / Feedback</h4>
+            </div>
+            <div class="modal-body">
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div ng-if="saveFeedbackSuccess" class="alert alert-success" role="alert">You have successfully submitted your feedback/bug. Thank you for your submition.</div>
+        <div ng-if="feedbackError" class="alert alert-danger" role="alert">Something isn't right here. Please try again later, or please send us an email.</div>
+        </div>
+</div>
+                <div class="row">
+
+
+                    <div class="col-md-12">
+                Send your feedback to NOW.
+                        <br>
+                        <br>
+                        <div class="">
+                            <textarea class="form-control" required="required" ng-model="feedback" placeholder="Please enter your feedback here..." rows="5"></textarea>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-success" ng-click="saveFeedback()">Send Feedback</button>
+
+            </div>
+                </form>
+        </div>
+    </div>
+</div>
+
+<!-- model bug/feedback end -->
 
 <!-- Modal 1 -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -286,8 +335,8 @@
         </div>
 
         <div class="col-md-4 col-sm-4 col-xs-12" align="right">
-            <a href="#"><span class="facebook-icon"></span></a>
-            <a href="#"><span class="twitter-icon"></span></a>
+            <a href="https://www.facebook.com/Now" target="_blank"><span class="facebook-icon"></span></a>
+            <a href="https://twitter.com/now_nz" target="_blank"><span class="twitter-icon"></span></a>
         </div>
     </div>
 
@@ -398,6 +447,27 @@
 
 
 ​
+
+<script>
+    clickedSideMenu = function () {
+
+
+        if (hasClass(document.getElementById("carrot"),"glyphicon-chevron-left")) {
+            $("#carrot").removeClass("glyphicon-chevron-left");
+            $("#carrot").addClass("glyphicon-chevron-right");
+            $('#wrapper').toggleClass('toggled');
+        }else{
+            $("#carrot").removeClass("glyphicon-chevron-right");
+            $("#carrot").addClass("glyphicon-chevron-left");
+
+            $('#wrapper').toggleClass('toggled');
+        }
+    }
+
+    function hasClass(element, cls) {
+        return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
+    }
+</script>
 
 
 

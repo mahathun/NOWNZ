@@ -29,6 +29,13 @@
   ]);
 
   function PasswordCtrl( $scope,PageLinks, User, Api,  $location) {
+    if(window.innerWidth< 700) {
+      //$("#wrapper").toggleClass("active");
+      $("#carrot").removeClass("glyphicon-chevron-left");
+      $("#carrot").addClass("glyphicon-chevron-right");
+      $('#wrapper').toggleClass('toggled')
+
+    }
     $scope.pageLinks  = null;
     //var test = PageLinks;
     $scope.pageLinks = PageLinks.getLinks();

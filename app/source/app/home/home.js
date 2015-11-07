@@ -37,6 +37,14 @@
 
     console.log(User);
 
+    if(window.innerWidth< 700) {
+      //$("#wrapper").toggleClass("active");
+      $("#carrot").removeClass("glyphicon-chevron-left");
+      $("#carrot").addClass("glyphicon-chevron-right");
+      $('#wrapper').toggleClass('toggled')
+
+    }
+
 
     $scope.user = User;
     $scope.plan = { };

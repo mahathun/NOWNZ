@@ -32,6 +32,8 @@
 
     $scope.saveProfileSuccess = false;
     $scope.saveProfileError = false;
+    $scope.feedbackError = false;
+    $scope.saveFeedbackSuccess = false;
 
     $scope.logout = function( ) {
       $location.path('/login');
@@ -155,6 +157,25 @@
       }
     }
 
+
+    $scope.saveFeedback = function() {
+      if ($scope.feedback.length != 0 ) {
+        $("#loadingScreen").show();
+
+        Api.saveFeedback($scope.feedback)
+            .then(function () {
+
+              $("#loadingScreen").hide();
+              $scope.saveFeedbackSuccess = true;
+              setTimeout(function(){ $scope.saveFeedbackSuccess = false;},500);
+
+            }, function errorResponse(err) {
+                $scope.feedbackError = true;
+            });
+
+
+      }
+    }
   }
 
   module.controller( 'AppCtrl', [

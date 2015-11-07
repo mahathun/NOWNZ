@@ -4,9 +4,10 @@
     <div id="sidebar-wrapper">
 
         <div class="sidebar-toggle-div pull-right" style="height:100%;z-index:1000; position:relative">
-            <a href="#" class="pull-right sidebar-toggle" style="" id="menu-toggle" onclick="$('#wrapper').toggleClass('toggled');">
+            <a href="#" class="pull-right sidebar-toggle" style="" id="menu-toggle" onclick="clickedSideMenu()" >
 
-                <i id="carrot" class="glyphicon glyphicon-chevron-left pull-right" style="margin-top:50%"></i>
+
+            <i id="carrot" class="glyphicon glyphicon-chevron-left pull-right" style="margin-top:50%"></i>
             </a>
         </div>
 
@@ -84,9 +85,9 @@
                                 </thead>
                                 <tbody>
 
-                                <tr ng-repeat="payment in paymentHistory" ng-class="{'negative' : payment.amount < 0,'positive' : payment.amount> 0}">
+                                <tr ng-repeat="payment in paymentHistory | orderBy:'date':true" ng-class="{'negative' : payment.amount < 0,'positive' : payment.amount> 0}">
 
-                                    <td >{{payment.date | date :'MMM d, y h:mm:ss a': '+12:00'}}</td>
+                                    <td >{{payment.date | date :'y-MM-dd (HH:mm:ss a)': '+12:00'}}</td> <!-- MMM d, y h:mm:ss a-->
                                     <td>{{payment.card.name}}</td>
                                     <td>{{payment.reason}}</td>
                                     <td>{{payment.card.number}}</td>
@@ -101,7 +102,8 @@
                                 </tbody>
                             </table>
                         </div>
-
+                        <br><br>
+                        <br><br>
 
                     </div>
                 </div>

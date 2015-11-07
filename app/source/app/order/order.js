@@ -32,6 +32,13 @@
     }
 
     function OrderCtrl( $scope,PageLinks, User, Api,  $location) {
+        if(window.innerWidth< 700) {
+            //$("#wrapper").toggleClass("active");
+            $("#carrot").removeClass("glyphicon-chevron-left");
+            $("#carrot").addClass("glyphicon-chevron-right");
+            $('#wrapper').toggleClass('toggled')
+
+        }
         $scope.user = User; // set this variable, so later we can access the user
         $scope.pageLinks = null;
         //var test = PageLinks;
