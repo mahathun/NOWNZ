@@ -2,7 +2,7 @@
 
 ###Step 1: Getting the source files###
     Extract the downloaded zip file.
-    (you can download the file from `[https://bitbucket.org/eitstudents/team-b/get/b40b8463d8b8.zip]`)
+    (you can download the file from [https://bitbucket.org/eitstudents/team-b/get/b40b8463d8b8.zip](https://bitbucket.org/eitstudents/team-b/get/b40b8463d8b8.zip))
 
 ###Step 2: Setting up the environment###
     Install NODE.JS application.
