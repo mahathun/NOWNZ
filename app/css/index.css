@@ -77,6 +77,46 @@
 
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.help-icon {
+	color: #006600;
+
+
+}
+.help-icon :hover{
+	color: #ecd533!important;
+
+}
+.help-icon span{
+	-webkit-background-size: cover;
+	background-size: cover;
+	display: inline-block;
+	height: 20px;
+	width:20px;
+	background-image: url("../image/help1.png");
+	vertical-align: middle;
+	margin-right: 5px;
+}
+.help-icon:hover span{
+
+	background-image: url("../image/help2.png");
+
+}
+
 .background{
 
 	background-color: #DAF5BF;
