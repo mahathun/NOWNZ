@@ -1,4 +1,19 @@
 # README #
+This project is a working online Mobile Friendly, Web portal for NOW NZ customers with all the features that customers might want. Such as,
+* Track the status of an order
+* View current account balance.
+* Pay bills.
+* View plan.
+* View Data/Public WiFi and calling usage.
+* Change plans
+* View past transaction history.
+* Provide feedback on the portal
+* View network status.
+
+The purpose of this online portal is to deliver whatever the information a NOW NZ customer might need without much trouble so NOW NZ will be able to deliver the maximum customer satisfaction.
+
+#####working Demo of the application can be viewed from here #####
+<http://nodejs-eit-team-b.herokuapp.com>
 
 ###Step 1: Getting the source files###
 >Extract the downloaded zip file.
@@ -14,7 +29,8 @@
 
 ###Step 3: Installing Dependencies###
 >Open a command window
->Change directory to the extracted directory in Step 1. e.g `cd c:/nowPortal/`
+>Change directory to the extracted directory in Step 1.
+>e.g `cd c:/nowPortal/`
 
 >Run command, `npm install`
 
