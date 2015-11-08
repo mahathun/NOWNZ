@@ -1,6 +1,28 @@
 <div id="wrapper">
 
-        <!-- Sidebar -->
+
+    <!--Success Modal Templates-->
+    <div id="messageBox">
+    <div id="modal-success" class="modal modal-message modal-success fade" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <i class="glyphicon glyphicon-question-sign"></i>
+                </div>
+                <div class="modal-title">Are you sure.</div>
+                <div class="modal-body">Are you sure you want to change your plan</div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" >No</button>
+
+                    <button type="button" class="btn btn-success" data-dismiss="modal" ng-click="changePlan($scope.selectedPlan)">Yes</button>
+                </div>
+            </div> <!-- / .modal-content -->
+        </div> <!-- / .modal-dialog -->
+    </div>
+        </div>
+    <!--End Success Modal Templates-->
+
+    <!-- Sidebar -->
         <div id="sidebar-wrapper">
 
            <div class="sidebar-toggle-div pull-right" style="height:100%;z-index:1000; position:relative">
@@ -89,7 +111,7 @@
                                     <p>100 GB</p>
                                     <p>Rollover Data</p>
                                     <p>ADSL</p>
-                                    <a class="btn btn-pricing" ng-click="changePlan('plan1')">Order Now</a>
+                                    <a class="btn btn-pricing" ng-click="$scope.selectedPlan = 'plan1'" data-toggle="modal" data-target="#modal-success">Order Now</a>
                                 </div>
                             </div>
 
@@ -103,7 +125,7 @@
                                     <p>50 GB</p>
                                     <p>Free Local calling</p>
                                     <p>VDSL</p>
-                                    <a class="btn btn-pricing" ng-click="changePlan('plan2')">Order Now</a>
+                                    <a class="btn btn-pricing" ng-click="$scope.selectedPlan = 'plan2'" data-toggle="modal" data-target="#modal-success">Order Now</a>
                                 </div>
                             </div>
 
@@ -118,7 +140,7 @@
                                     <p>Hotspot data</p>
                                     <p>FIBRE</p>
 
-                                    <a class="btn btn-pricing" ng-click="changePlan('plan3')">Order Now</a>
+                                    <a class="btn btn-pricing" ng-click="$scope.selectedPlan = 'plan3'" data-toggle="modal" data-target="#modal-success">Order Now</a>
                                 </div>
                             </div>
                         </div>

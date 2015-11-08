@@ -140,3 +140,90 @@
 .content .plan.featured .price {
     margin-bottom:40px;
 }
+
+
+/* ------------- message box ----------------- */
+
+
+#messageBox .modal-content {
+    -webkit-border-radius: 0;
+    -webkit-background-clip: padding-box;
+    -moz-border-radius: 0;
+    -moz-background-clip: padding;
+    border-radius: 6px;
+    background-clip: padding-box;
+    -webkit-box-shadow: 0 0 40px rgba(0,0,0,.5);
+    -moz-box-shadow: 0 0 40px rgba(0,0,0,.5);
+    box-shadow: 0 0 40px rgba(0,0,0,.5);
+    color: #000;
+    background-color: #fff;
+    border: rgba(0,0,0,0);
+}
+#messageBox .modal-message .modal-dialog {
+    width: 300px;
+}
+#messageBox .modal-message .modal-body, #messageBox .modal-message .modal-footer, #messageBox .modal-message .modal-header, #messageBox .modal-message .modal-title {
+    background: 0 0;
+    border: none;
+    margin: 0;
+    padding: 0 20px;
+    text-align: center!important;
+}
+
+#messageBox .modal-message .modal-title {
+    font-size: 17px;
+    color: #737373;
+    margin-bottom: 3px;
+}
+
+#messageBox .modal-message .modal-body {
+    color: #737373;
+}
+
+#messageBox .modal-message .modal-header {
+    color: #fff;
+    margin-bottom: 10px;
+    padding: 15px 0 8px;
+}
+#messageBox .modal-message .modal-header .fa,
+#messageBox .modal-message .modal-header
+.glyphicon, #messageBox .modal-message
+.modal-header .typcn, #messageBox .modal-message .modal-header .wi {
+    font-size: 30px;
+}
+
+#messageBox .modal-message .modal-footer {
+    margin: 25px 0 20px;
+    padding-bottom: 10px;
+}
+
+#messageBox .modal-backdrop.in {
+    zoom: 1;
+    filter: alpha(opacity=75);
+    -webkit-opacity: .75;
+    -moz-opacity: .75;
+    opacity: .75;
+}
+#messageBox .modal-backdrop {
+    background-color: #fff;
+}
+#messageBox .modal-message.modal-success .modal-header {
+    color: #53a93f;
+    border-bottom: 3px solid #a0d468;
+}
+
+#messageBox .modal-message.modal-info .modal-header {
+    color: #57b5e3;
+    border-bottom: 3px solid #57b5e3;
+}
+
+#messageBox .modal-message.modal-danger .modal-header {
+    color: #d73d32;
+    border-bottom: 3px solid #e46f61;
+}
+
+#messageBox .modal-message.modal-warning .modal-header {
+    color: #f4b400;
+    border-bottom: 3px solid #ffce55;
+}
+
