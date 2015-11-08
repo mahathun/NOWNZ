@@ -1,14 +1,15 @@
 # README #
 This project is a working online Mobile Friendly, Web portal for NOW NZ customers with all the features that customers might want. Such as,
- * Track the status of an order
- * View current account balance.
- * Pay bills.
- * View plan.
- * View Data/Public WiFi and calling usage.
- * Change plans
- * View past transaction history.
- * Provide feedback on the portal
- * View network status.
+
+*   Track the status of an order.
+*   View current account balance.
+*   Pay bills.
+*   View plan.
+*   View Data/Public WiFi and calling usage.
+*   Change plans
+*   View past transaction history.
+*   Provide feedback on the portal
+*   View network status.
 
 The purpose of this online portal is to deliver whatever the information a NOW NZ customer might need without much trouble so NOW NZ will be able to deliver the maximum customer satisfaction.
 
