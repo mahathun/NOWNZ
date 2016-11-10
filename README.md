@@ -18,7 +18,7 @@ The purpose of this online portal is to deliver whatever the information a NOW N
 
 ###Step 1: Getting the source files###
 >Extract the downloaded zip file.
->you can download the file from <https://bitbucket.org/eitstudents/team-b/get/b40b8463d8b8.zip>
+>you can download the file from <https://github.com/mahathun/NOWNZ.git>
 
 ###Step 2: Setting up the environment###
 >Install NODE.JS application.
